@@ -1,0 +1,29 @@
+.share{
+    display: flex;
+    align-items: center;
+    background:$white;
+    &>*{
+        color:$black;
+    }
+    &__title{
+        @include text-blocky--tiny;
+        padding-right:$gap/4;
+        margin: 0;
+    }
+    &__links{
+        display: flex;
+        &__item{
+            display:block;
+            margin:5px 10px;
+            width:20px;
+            height:20px;
+            svg{
+                width:20px;
+                height:20px;
+            }
+            &:last-of-type{
+                padding-right:0;
+            }
+        }
+    }
+}

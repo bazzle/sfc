@@ -1,0 +1,71 @@
+.author--horiz{
+    background-color: $color-primary;
+    padding: $gap;
+    color:$white;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    a{
+        color:$white;
+    }
+    @include break(large) {
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: start;
+    }
+    &__profile{
+        position: relative;
+        &__arrow{
+            display: block;
+            width:40px;
+            height: 40px;
+            position: absolute;
+            left: 50%;
+            top:-6rem;
+            transform: translate(-50%);
+            span{
+                display: block;
+                width: 100%;
+                height: 100%;
+                transform: rotate(45deg);
+                transform-origin: center;
+                background: $color-primary;
+            }
+        }
+        text-align:center;
+        @include break(large) {
+            flex-shrink:0;
+        }
+        &__image{
+            display: block;
+            border-radius:50%;
+            margin-bottom: $gap/2;
+            width: 100px;
+            height:100px;
+        }
+        &__name{
+            @include text-blocky;
+            text-transform: lowercase;
+            line-height: 1.2;
+        }
+    }
+    &__about{
+        text-align:center;
+        font-weight:$weight-std-bold;
+        @extend %text-body;
+        @include break(large) {
+            max-width: none;
+            text-align: left;
+            flex-grow:1;
+            padding-left: $gap;
+        }
+        &__link{
+            @include link-styled();
+        }
+        &__inner{
+            max-width: 400px;
+        }
+    }
+}

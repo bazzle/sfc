@@ -1,0 +1,11 @@
+.grid{
+    &--1_1{
+        @include grid--even;
+    }
+    &--1-2{
+        @include grid--odd;
+    }
+    &--2-1{
+        @include grid--odd;
+    }
+}

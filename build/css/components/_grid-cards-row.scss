@@ -1,0 +1,13 @@
+.grid{
+    width: 100%;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns:repeat(2, 1fr);
+    grid-gap:$gap;
+    @include break(medium) {
+        grid-template-columns:repeat(4, 1fr);
+    }
+    @include break(large) {
+        grid-gap:$gap*2;
+    }
+}

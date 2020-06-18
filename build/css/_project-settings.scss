@@ -1,0 +1,113 @@
+// Project specific mixins and variables
+
+// paths
+$path-images: "../assets/images/";
+
+// layout ==============================================
+
+// margins
+$gap:4rem;
+$gap--tight:2rem;
+$gap--deep:12rem;
+$site-width:1600px;
+$content-width:1000px;
+$margin-std:1.5rem;
+
+// colors ==============================================
+
+$black:#000000;
+$white: #ffffff;
+$off-white: #f9f9f9;
+$color-dark-gray:#4B4B4B;
+$darken-overlay:rgba(black, .05);
+$white-darken:darken($white, 5);
+$black-lighten:lighten($black, 20);
+
+$color-primary:rgb(33, 32, 31);
+$color-primary-feint:lighten($color-primary, 30);
+$color-secondary:#21c4d3;
+$color-secondary-feint:lighten($color-secondary, 30);
+$color-accent:#21c4d3;
+$color-feint:#f2f2f2;
+$color-feint-1:#f2f2f2;
+$color-feint-2:#EBEBEB;
+$color-feint-3:#E3E3E3;
+$color-feint-4:#D4D4D4;
+
+// backgrounds
+$color-header-bg:$white;
+$color-bg:$white;
+
+// link color
+$color-link:$color-secondary;
+$color-text:$black;
+
+// button colour
+$color-button:$color-primary;
+
+// Headings
+$color-heading:$color-primary;
+$color-body-heading:$color-primary;
+
+// misc
+$color-tagline:$black;
+$color-selection:$color-accent;
+
+// font loading
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600&display=swap');
+
+
+// typography ==============================================
+
+$font-brand:'Archivo Black', sans-serif;
+$font-std:'Archivo', sans-serif;
+
+// font weights
+$weight-std-std:400;
+$weight-std-bold:600;
+
+// font-size;
+$font-size-base:10px;
+$font-size-mobile:1.4rem;
+$font-size-std:1.6rem;
+$font-size-tiny:1.4rem;
+
+// line heights
+$line-height-std:1.7;
+$line-height--tight:1.2;
+
+// layout margins
+$space:4rem;
+
+$s1:8rem;
+$s2:6rem;
+$s3:3rem;
+$s4:2rem;
+
+
+// header ==============================================
+
+$header-height:120px;
+$header-height-mobile:80px;
+
+// misc styles =========================================
+
+// box and lines border lines
+$line: 4px solid $black;
+$line-feint:1px solid $black-lighten;
+
+// text shadow
+$text-shadow: 0 2px 3px rgba($black, .3);
+$text-shadow-feint: 0 1px 2px rgba($black, .3);
+
+// raised item shadow
+$box-shadow:0px 3px 12px rgba($black, .1);
+
+// borders
+$border-feint: rgba($black, 0.2) solid 1px;
+$border-accent: $color-secondary solid 2px;
+$border-accent-feint: rgba($color-secondary, 0.2) solid 1px;
+
+// border radius
+$border-radius: 4px;

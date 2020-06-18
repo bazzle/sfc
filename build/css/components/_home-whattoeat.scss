@@ -1,0 +1,10 @@
+.whattoeat{
+    padding-top: $space;
+    padding-bottom: $space;
+    &__index{
+        padding-bottom: $space;
+    }
+    &__footer{
+        @include align(center,right);
+    }
+}

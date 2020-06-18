@@ -1,0 +1,96 @@
+.article{
+    .grid-space{
+        padding:0;
+        display:none;
+        @include break(large) {
+            display: block;
+        }
+    }
+    &__space-left{
+        grid-area:spaceleft;
+    }
+    &__space-right{
+        grid-area:spaceright;
+    }
+
+    &__main{
+        @include break(medium) {
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:auto auto 1fr;
+            grid-template-areas:
+            "share body body"
+            "asidemain body body"
+            "asidecontent body body";
+        }
+        @include break(large) {
+            grid-template-columns:1fr minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) 1fr;
+            grid-template-rows:auto 1fr;
+            grid-template-areas:
+            "spaceleft share body body asidecontent spaceright"
+            "spaceleft asidemain body body asidecontent spaceright";
+        }
+    }
+    
+    &__asidecontent{
+        grid-area:asidecontent;
+        // display:none;
+    }
+    &__body{
+        grid-area:body;
+        // display:none;
+    }
+    &__asidemain{
+        grid-area:asidemain;
+    }
+    &__share{
+        grid-area:share;
+        // display:none;
+    }
+    &__body{
+        @extend %text-body;
+        padding:0 $gap--tight;
+        @include break(tablet) {
+            padding:0 $gap;
+        }
+    }
+    &__asidemain{
+        padding:$gap--tight;
+        @include break(tablet) {
+            padding:$gap 0 $gap $gap;
+        }
+        @include break(medium) {
+            padding:0 0 $gap $gap;
+        }
+        p{
+            display: none;
+        }
+    }
+    &__asidecontent{
+        padding:$gap--tight;
+        @include break(tablet) {
+            padding:$gap 0 $gap $gap;
+        }
+        @include break(medium) {
+            padding:0 0 $gap $gap;
+        }
+        @include break(large) {
+            padding:0 $gap 0 0;
+        }
+        p{
+            display: none;
+        }
+    }
+    &__share{
+        padding:0 $gap--tight;
+        @include break(tablet) {
+            padding:0 $gap;
+        }
+        @include break(large) {
+            @include align-right;
+            text-align:right;
+            padding:$gap 0;
+        }
+    }
+
+}

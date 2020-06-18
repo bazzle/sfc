@@ -1,0 +1,79 @@
+.pillar-head{
+    @include break(medium) {
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        grid-template-rows:auto auto 1fr;
+        grid-template-areas:
+        "asidemain share share"
+        "asidemain body body"
+        "asidecontent body body";
+    }
+    @include break(large) {
+        grid-template-columns:1fr minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) 1fr;
+        grid-template-rows:auto 1fr;
+        grid-template-areas:
+        "spaceleft share body body asidecontent spaceright"
+        "spaceleft asidemain body body asidecontent spaceright";
+    }
+
+    &__share{
+        grid-area:share;
+    }
+    &__body{
+        grid-area:body;
+    }
+    &__asidecontent{
+        grid-area:asidecontent;
+    }
+    &__asidemain{
+        grid-area:asidemain;
+    }
+    &__body{
+        @extend %text-body;
+        padding:$gap--tight;
+        @include break(tablet) {
+            padding:$gap;
+        }
+        @include break(medium) {
+            padding:$gap;
+        }
+        @include break(large) {
+            padding:0 $gap;
+        }
+    }
+    &__asidecontent{
+        padding:$gap--tight;
+        @include break(tablet) {
+            padding:$gap 0 $gap $gap;
+        }
+        @include break(medium) {
+            padding:0 $gap 0 $gap;
+        }
+        p{
+            display: none;
+        }
+    }
+    &__asidemain{
+        padding:0 $gap--tight;
+        @include break(tablet) {
+            padding:$gap 0 $gap $gap;
+        }
+        @include break(large) {
+            padding:0 0 $gap 0;
+        }
+        p{
+            display: none;
+        }
+    }
+    &__share{
+        padding:0 $gap--tight;
+        @include break(tablet) {
+            padding:0 $gap;
+        }
+        @include break(large) {
+            @include align-right;
+            text-align:right;
+            padding:$gap 0;
+        }
+    }
+}

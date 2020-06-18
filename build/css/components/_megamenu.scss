@@ -1,0 +1,17 @@
+.megamenu{
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    display: none;
+    &__main{
+        display: flex;
+        flex-direction: row;
+    }
+    &__col{
+        flex-grow: 1;
+        background-color: white;
+        min-height: 300px;
+    }
+}

@@ -1,0 +1,80 @@
+.author{
+    background-color: $color-primary;
+    color:$white;
+    @include break(tablet) {
+        display: block;
+        padding:$gap--tight;
+    }
+    @include break(medium) {
+        padding:$gap;
+    }
+    @include break(large) {
+        padding:$gap;
+        display: grid;
+        grid-template-columns:auto 1fr;
+        grid-template-areas:
+        "profile about"
+        "socials socials";
+    }
+    &__profile{
+        grid-area:profile;
+    }
+    &__about{
+        grid-area:about;
+    }
+    &__socials{
+        grid-area:socials;
+    }
+    a{
+        color:$white;
+    }
+
+    &__profile{
+        position: relative;
+        @include align-center;
+        padding:0 0 $gap 0;
+        @include break(large) {
+            padding:0 $gap 0 0;
+        }
+        &__image{
+            width: 90px;
+            height:90px;
+            display: block;
+            border-radius:50%;
+        }
+    }
+    &__about{
+        @include text-tiny;
+        max-width: none;
+        text-align: center;
+        @include break(large) {
+            text-align: left;
+        }
+        &__description{
+            @include text-gap--tight;
+        }
+        &__link{
+            a{
+                @include link-styled();
+            }
+        }
+    }
+    &__socials{
+        text-align:center;
+        padding: $gap 0 0 0;
+        &__divider{
+            @include divider--dark;
+            margin-bottom:$gap;
+        }
+        &__title{
+            @include text-blocky;
+            @include text-gap--tight;
+        }
+        &__links{
+            &__item{
+                margin:.5em;
+                @include link-styled();
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.breadcrumb{
+    @include text-blocky--tiny;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    &__breadcrumb{
+        span{
+            white-space:no-wrap;
+        }
+    }
+    &_last{
+        visibility: hidden;
+    }
+}

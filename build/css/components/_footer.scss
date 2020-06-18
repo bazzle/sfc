@@ -1,0 +1,18 @@
+.footer{
+    width: 100%;
+    &__inner{
+        padding-top: $gap;
+        padding-bottom: $gap;
+    }
+    &__links{
+        @include break() {
+            border-right:4px solid $white;
+        }
+        a{
+            font-weight:$weight-std-bold;
+        }
+        &:last-of-type{
+            border-right:none;
+        }
+    }
+}

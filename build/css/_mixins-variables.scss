@@ -1,0 +1,217 @@
+// Breakpoints
+$breakpoints: (
+    phone: 560px,
+    tablet: 700px,
+    medium: 960px,
+    large: 1280px,
+    xlarge: 1440px,
+    site-width: $site-width
+);
+$breakpoints--h: (
+    letterbox: 900px,
+);
+
+// make space for WP admin bar
+
+@mixin admin-bar($spacing:padding){
+  @if $spacing == margin{
+    .admin-bar &{
+      @media screen and (max-width: 782px){
+        margin-top:46px;
+      }
+      margin-top:32px;
+    }
+  }
+  @if $spacing == padding{
+    .admin-bar &{
+      @media screen and (max-width: 782px){
+        padding-top:46px;
+      }
+      padding-top:32px;
+    }
+  }
+}
+
+// breakpoint mixins
+@mixin break($breakpoint: medium) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+@mixin break-under($breakpoint: medium) {
+  @if map-has-key($breakpoints, $breakpoint) {
+      @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+          @content;
+      }
+  }
+}
+
+// height 
+@mixin break--h($breakpoint) {
+    @if map-has-key($breakpoints--h, $breakpoint) {
+        @media screen and (max-height: map-get($breakpoints--h, $breakpoint)) and (orientation: landscape) {
+            @content;
+        }
+    }
+}
+
+// Standard greyscale: number = brightness (HSB)
+$gray95: #F2F2F2;
+$gray90: #E6E6E6;
+$gray80: #CCCCCC;
+$gray70: #B3B3B3;
+$gray60: #999999;
+$gray50: #808080;
+$gray40: #666666;
+$gray30: #4D4D4D;
+$gray20: #333333;
+$gray10: #262626;
+
+// Social colors
+$dribbble: #EA4C89;
+$facebook: #3B5999;
+$flickr: #FF0084;
+$googleplus: #DD4B39;
+$instagram: #E4405F;
+$linkedin: #0077B5;
+$pinterest: #BD081C;
+$snapchat: #FFFC00;
+$soundcloud: #ff3300;
+$tumblr: #34465D;
+$twitter: #55ACEE;
+$vimeo: #1AB7EA;
+$whatsapp: #25D366;
+$youtube: #CD201F;
+
+
+// Reverse
+
+@mixin color-reverse{
+  color:$white;
+  background-color:$color-primary;
+  h1, h2, h3, h4, h5, p, ul, li, a, span{
+    color:$white;
+    background-color:$color-primary;
+  }
+}
+
+
+
+
+
+// Aspect ratios
+$aspect_1-1: 100%;
+$aspect_16-9: 56.25%;
+$aspect_4-3: 75%;
+$aspect_3-2: 66.66%;
+$aspect_8-5: 62.5%;
+
+
+
+// alignment
+@mixin align-left{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+@mixin align-left-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+}
+@mixin align-left-center{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+@mixin align-left-bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+}
+@mixin align-center{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+@mixin align-center--baseline{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+}
+@mixin align-center-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+@mixin align-center-bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+@mixin align-right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+@mixin align-right-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+}
+@mixin align-right-bottom{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+}
+@mixin align-vertical-center{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+
+
+@mixin align($yaxis:center, $xaxis:center ) {
+  display:flex;
+  @if $yaxis == top and $xaxis == left {
+    align-items:flex-start;
+    justify-content:flex-start;
+
+  } @else if $yaxis == top and $xaxis == center {
+    align-items:flex-start;
+    justify-content:center;
+
+  } @else if $yaxis == top and $xaxis == right {
+    align-items:flex-start;
+    justify-content:flex-end;
+
+  } @else if $yaxis == center and $xaxis == left {
+    align-items:center;
+    justify-content:flex-start;
+
+  } @else if $yaxis == center and $xaxis == center {
+    align-items:center;
+    justify-content:center;
+
+  } @else if $yaxis == center and $xaxis == right {
+    align-items:center;
+    justify-content:flex-end;
+
+  } @else if $yaxis == bottom and $xaxis == left {
+    align-items:flex-end;
+    justify-content:flex-start;
+
+  } @else if $yaxis == bottom and $xaxis == center {
+    align-items:flex-end;
+    justify-content:center;
+
+  } @else if $yaxis == bottom and $xaxis == right {
+    align-items:flex-end;
+    justify-content:flex-end;
+  }
+}

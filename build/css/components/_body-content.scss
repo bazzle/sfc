@@ -1,0 +1,46 @@
+.body-content{
+  @extend %text-body;
+  blockquote{
+    &.pq{
+      margin:$gap;
+      margin-left:0;
+      padding-top:1.5em;
+      width:100%;
+      font-size:3rem;
+      @include bgimage(quotemark,svg);
+      background-size:1.5em;
+      @include break(medium) {
+        margin:$gap;
+        padding-top:0;
+        padding-left:2.5em;
+        margin-left:$gap;
+        margin-top:0;
+        margin-bottom:$gap/2;
+        float:right;
+        max-width:20em;
+      }
+    }
+    &.cite{
+      display:block;
+      border-left:10px solid $color-secondary;
+      padding-left:$gap--tight;
+    }
+  }
+  &__outset-image{
+    margin:$gap;
+    width:100%;
+    max-width:30vw;
+    float:right;
+    img{
+      width:100%;
+      height:auto;
+    }
+    @include break(medium) {
+      margin:$gap;
+      margin-left:$gap;
+      margin-top:0;
+      margin-bottom:$gap/2;
+      max-width:20em;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.ad{
+    &--vertical{
+        width:100%;
+        @include align-center;
+        display: none;
+        @include break(medium) {
+            display: block;
+        }
+    }
+    &--vertical-square{
+        width:100%;
+        @include align-center;
+        @include break(medium) {
+            display: block;
+        }
+        img{
+            width:100%;
+            height:auto;
+            max-width:400px;
+        }
+    }
+    &--horizontal{
+        display:flex;
+        justify-content: center;
+    }
+}
