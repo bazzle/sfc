@@ -6,8 +6,8 @@ $path-images: "../assets/images/";
 // layout ==============================================
 
 // margins
-$gap:4rem;
-$gap--tight:2rem;
+$gap:6rem;
+$gap--tight:3rem;
 $gap--deep:12rem;
 $site-width:1600px;
 $content-width:1000px;
@@ -110,4 +110,4 @@ $border-accent: $color-secondary solid 2px;
 $border-accent-feint: rgba($color-secondary, 0.2) solid 1px;
 
 // border radius
-$border-radius: 4px;
+$border-radius: 2px;

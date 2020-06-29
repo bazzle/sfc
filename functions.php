@@ -30,5 +30,12 @@ register_nav_menus(
         'footer-menu-2' => 'Footer menu 2'
     )
 );
+
+
+function the_field_without_wpautop( $field_name ) {
+	remove_filter('acf_the_content', 'wpautop');
+	the_field( $field_name );
+	add_filter('acf_the_content', 'wpautop');
+}
     
 ?>

@@ -6,14 +6,20 @@
 @import 'components/locations-listing';
 @import 'components/megamenu';
 @import 'components/sidebar-list';
+@import 'components/post-list';
 @import 'components/share';
 @import 'components/pillar';
 @import 'components/pillar-head';
 @import 'components/article';
 @import 'components/ad';
 @import 'components/_card';
+@import 'components/_image-block';
+@import 'components/_card-block';
+@import 'components/_content-block';
 @import 'components/_grid-cards-row';
-@import 'components/_grid-cards-5x';
+@import 'components/_grid-irregular-1';
+@import 'components/_grid-4x';
+@import 'components/_grid-3_1';
 @import 'components/_breadcrumb';
 @import 'components/_hero-home';
 @import 'components/_hero-pillar';
@@ -30,3 +36,5 @@
 @import 'components/_home-whattoeat';
 @import 'components/_divider-down';
 @import 'components/_author';
+// pages
+@import 'pages/_home';

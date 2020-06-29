@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             },
             options: {
                 watchTask: true,
-                proxy: "http://street-food-city.local/"
+                proxy: "http://sfc.local/"
             }
         }
     },

@@ -16,6 +16,12 @@ body {
   color:$black;
 }
 
+// SOME RESETS ===============================================
+
+img{
+  border-radius: $border-radius;
+}
+
 // MAIN LAYOUT ====================================================================================================
 
 html, body{
@@ -150,6 +156,12 @@ svg path{
   font-weight:$weight-std-bold;
   font-size:1.4rem;
   @include break(tablet) {
+    font-size:1.2rem;
+  }
+  @include break(medium) {
+    font-size:1.4rem;
+  }
+  @include break(large) {
     font-size:$font-size;
   }
 }
@@ -269,14 +281,14 @@ svg path{
 
 
 @mixin text-gap{
-  margin-bottom:$gap--tight;
+  margin-bottom:$gap/2;
   @include break(tablet) {
     margin-bottom:$gap;
   }
 }
 
 @mixin text-gap--tight{
-  margin-bottom:$gap--tight;
+  margin-bottom:$gap--tight/2;
   @include break(tablet) {
     margin-bottom:$gap--tight;
   }
@@ -350,6 +362,11 @@ svg path{
 @mixin panel{
   width:100vw;
 }
+@mixin panel--spaced{
+  width:100vw;
+  padding-top:$gap/2;
+  padding-bottom:$gap/2;
+}
 
 @mixin container{
   width:100vw;
@@ -359,15 +376,14 @@ svg path{
 
 @mixin container--margins{
   width:100vw;
-  padding: $gap--tight;
+  max-width:$site-width;
+  margin:0 auto;
   @include break(tablet) {
-    padding: $gap;
+    padding: 0 $gap--tight;
   }
   @include break(site-width) {
     padding: 0;
   }
-  max-width:$site-width;
-  margin:0 auto;
 }
 
 .container{
@@ -376,9 +392,6 @@ svg path{
 
 .container--margins{
   @include container--margins;
-  @include break(site-width) {
-    @include container--margins;
-  }
 }
 
 .panel{
@@ -388,6 +401,9 @@ svg path{
     &--margins{
       @include container--margins;
     }
+  }
+  &--spaced{
+    @include panel--spaced;
   }
   &__divider{
     border: none;
@@ -399,10 +415,12 @@ svg path{
     }
   }
   &__title{
+    @include container;
     @include text-blocky;
-    margin-bottom: $gap--tight;
-    @include break(tablet) {
-      margin-bottom: $gap;
+    text-align: left;
+    padding: $gap $gap--tight;
+    @include break(site-width) {
+      padding: $gap 0;
     }
   }
 }
