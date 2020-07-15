@@ -1,8 +1,5 @@
-<div class="panel">
-    <div class="panel__title">
-        <h3><?php echo get_sub_field('title'); ?></h3>
-    </div>
-    <div class="panel__inner--margins">
+
+
         <?php if (have_rows('blocks')) : ?>
             <?php while( have_rows('blocks') ): the_row() ; ?>
             <div class="grid-irregular-1">
@@ -29,5 +26,3 @@
             </div>
             <?php endwhile; ?>
         <?php endif; ?>
-    </div>
-</div>

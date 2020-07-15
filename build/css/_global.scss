@@ -22,7 +22,7 @@ img{
   border-radius: $border-radius;
 }
 
-// MAIN LAYOUT ====================================================================================================
+// MAIN LAYOUT =============================================================
 
 html, body{
   width: 100%;
@@ -36,10 +36,7 @@ body{
 
 .header{
   position:relative;
-  height:$header-height-mobile;
-  @include break(large) {
-      height:$header-height;
-  }
+  @include header-height;
 }
 
 // main
@@ -56,7 +53,7 @@ footer{
   flex-shrink: 0;
 }
 
-// ANIMATION ====================================================================================================
+// ANIMATION =============================================================
 
 // fancy transitions
 $move-whip: cubic-bezier(0.8, 0, 0.3, 1);
@@ -94,92 +91,9 @@ svg path{
 
 // TYPOGRAPHY =================================================================================================
 
-
-// underline
-@mixin text-underline($color){
-    text-decoration: underline;
-    text-decoration-skip-ink: auto;
-    text-decoration-color: $color;
-}
-
-// title standard
-@mixin title($size:3.2rem, $color:$color-heading){
-  line-height:$line-height--tight;
-  color:$color;
-  font-family:$font-std;
-  font-weight: $weight-std-bold;
-  font-size:$size;
-  @include break-under(phone) {
-    word-break:break-word;
-  }
-}
-
-// title display
-@mixin title-display{
-  font-size: 4rem;
-  line-height:1.2;
-  font-family:$font-brand;
-  @include break(tablet) {
-    font-size: 4rem;
-  }
-  @include break(medium) {
-    font-size: 5rem;
-  }
-}
-
-// title display large
-@mixin title-display--large{
-  font-size: 4rem;
-  line-height:1.2;
-  font-family:$font-brand;
-  @include break(tablet) {
-    font-size: 6rem;
-  }
-  @include break(medium) {
-    font-size: 7rem;
-  }
-}
-
-// title display small
-@mixin title-display--small{
-  font-size: 3rem;
-  font-family:$font-brand;
-  @include break(tablet) {
-    font-size: 4rem;
-  }
-}
-
-// title block –– titles for cards mainly
-@mixin title-block($font-size:1.8rem){
-  font-family:$font-std;
-  line-height:1.2;
-  font-weight:$weight-std-bold;
-  font-size:1.4rem;
-  @include break(tablet) {
-    font-size:1.2rem;
-  }
-  @include break(medium) {
-    font-size:1.4rem;
-  }
-  @include break(large) {
-    font-size:$font-size;
-  }
-}
-
-// leadin/intro text
-@mixin text-leadin($font-size:2.8rem){
-  font-family:$font-std;
-  font-size:2.2rem;
-  line-height:1.4;
-  @include break(tablet) {
-    font-size:$font-size;
-    line-height:1.4;
-  }
-}
-
 // Blocky text
 @mixin text-blocky($font-size:1.4rem){
-  font-family:$font-std;
+  font-family:$font-blocky;
   line-height: $line-height-std;
   text-transform:uppercase;
   font-weight: $weight-std-bold;
@@ -192,7 +106,7 @@ svg path{
 }
 
 @mixin text-blocky--tiny($font-size:1.2rem){
-  font-family:$font-std;
+  font-family:$font-blocky;
   line-height: $line-height-std;
   text-transform:uppercase;
   font-weight: $weight-std-bold;
@@ -206,7 +120,7 @@ svg path{
 
 // Blocky text lowercase
 @mixin text-blocky--lower($font-size:1.4rem){
-  font-family:$font-std;
+  font-family:$font-blocky;
   line-height: $line-height-std;
   font-weight: $weight-std-bold;
   letter-spacing: .05em;
@@ -220,6 +134,7 @@ svg path{
 
 .text-blocky{
   @include text-blocky;
+  color: blue;
 }
 .text-blocky--lower{
   @include text-blocky--lower;
@@ -231,7 +146,7 @@ svg path{
 
 // Super Blocky text
 @mixin text-blocky-super($font-size:1.8rem){
-  font-family:$font-brand;
+  font-family:$font-blocky;
   line-height: $line-height-std;
   text-transform:uppercase;
   @include break(phone) {
@@ -244,7 +159,7 @@ svg path{
 
 // Super Blocky text lowercase
 @mixin text-blocky-super--lower($font-size:1.8rem){
-  font-family:$font-brand;
+  font-family:$font-blocky;
   line-height: $line-height-std;
   @include break(phone) {
     font-size:$font-size;
@@ -260,10 +175,10 @@ svg path{
 @mixin text-std{
   font-size: $font-size-mobile;
   line-height: $line-height--tight;
-  @include break(tablet) {
+  font-family:$font-std;
+  @include break(medium) {
     font-size:$font-size-std;
-    font-family:$font-std;
-    line-height:$line-height-std; 
+    line-height:$line-height-std;
   }
 }
 
@@ -291,6 +206,98 @@ svg path{
   margin-bottom:$gap--tight/2;
   @include break(tablet) {
     margin-bottom:$gap--tight;
+  }
+}
+
+// underline
+@mixin text-underline($color){
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: $color;
+}
+
+// title standard
+@mixin title($size:3.2rem, $color:$color-heading){
+  line-height:$line-height--tight;
+  color:$color;
+  font-family:$font-blocky;
+  font-size:$size;
+  @include break-under(phone) {
+    word-break:break-word;
+  }
+}
+
+// title display
+@mixin title-display($size:5rem){
+  font-size: 3rem;
+  line-height:1.2;
+  font-family:$font-display;
+  @include break(tablet) {
+    font-size: 3rem;
+  }
+  @include break(medium) {
+    font-size: $size;
+  }
+}
+
+// title display large
+@mixin title-display--large{
+  font-size: 4rem;
+  line-height:1.2;
+  font-family:$font-display;
+  @include break(tablet) {
+    font-size: 6rem;
+  }
+  @include break(medium) {
+    font-size: 7rem;
+  }
+}
+
+// title display small
+@mixin title-display--small{
+  font-size: 3rem;
+  font-family:$font-display;
+  @include break(tablet) {
+    font-size: 4rem;
+  }
+}
+
+// title block –– titles for cards mainly
+@mixin title-block($font-size:2.6rem){
+  font-family:$font-blocky;
+  line-height:1.2;
+  font-weight:$weight-std-bold;
+  font-size:2.2rem;
+  @include break(large) {
+    font-size:$font-size;
+  }
+}
+
+// title module
+@mixin title-module{
+  @include text-blocky;
+  text-align: left;
+  padding:$gap--tight 0;
+  padding-top: 0;
+  @include break(site-width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.title-module{
+  @include title-module;
+}
+
+// leadin/intro text
+@mixin text-leadin($font-size:2.2rem){
+  -webkit-font-smoothing:antialiased;
+  font-family:$font-bold;
+  font-size:2rem;
+  line-height:1.4;
+  @include break(tablet) {
+    font-size:$font-size;
+    line-height:1.6;
   }
 }
 
@@ -361,11 +368,12 @@ svg path{
 
 @mixin panel{
   width:100vw;
+  padding-top:$gap;
+  padding-bottom:$gap;
 }
-@mixin panel--spaced{
+
+@mixin panel--nospaced{
   width:100vw;
-  padding-top:$gap/2;
-  padding-bottom:$gap/2;
 }
 
 @mixin container{
@@ -378,9 +386,7 @@ svg path{
   width:100vw;
   max-width:$site-width;
   margin:0 auto;
-  @include break(tablet) {
-    padding: 0 $gap--tight;
-  }
+  padding: 0 $gap--tight;
   @include break(site-width) {
     padding: 0;
   }
@@ -397,13 +403,11 @@ svg path{
 .panel{
   @include panel;
   &__inner{
-    @include container;
-    &--margins{
-      @include container--margins;
-    }
+    @include container--margins;
   }
-  &--spaced{
-    @include panel--spaced;
+  &--nospaced{
+    padding: 0;
+    @include panel--nospaced;
   }
   &__divider{
     border: none;
@@ -415,13 +419,7 @@ svg path{
     }
   }
   &__title{
-    @include container;
-    @include text-blocky;
-    text-align: left;
-    padding: $gap $gap--tight;
-    @include break(site-width) {
-      padding: $gap 0;
-    }
+    @include title-module;
   }
 }
 
@@ -489,9 +487,8 @@ p, ul, ol{
 // lists
 ul{
   li{
-    margin-bottom:1em;
-    @include break(phone) {
-      margin-bottom:.5em;
+    @include break-under(tablet) {
+      margin-bottom:1em;
     }
   }
 }
@@ -504,10 +501,11 @@ a{
 
 // styled links
 
-@mixin link-styled($color:inherit, $border-color:$color-secondary, $hover-color:$color-secondary ){
+@mixin link-styled($color:inherit, $border-color:$color-secondary, $hover-color:$color-accent ){
   color:$color;
-  border-bottom:4px solid $border-color;
+  border-bottom:2px solid $border-color;
   display:inline;
+  font-family:$font-blocky;
   &:hover{
     color:$hover-color;
   }
@@ -561,12 +559,16 @@ img{
 
 // component globals
 
-.component--reverse{
+@mixin component-reverse{
   color:$white;
   background-color:$color-primary;
-  a{
+  h1, h2, h3, h4, h5, ul, ol, p, a{
     color:$white;
   }
+}
+
+.component-reverse{
+  @include component-reverse;
 }
 
 .component-title{

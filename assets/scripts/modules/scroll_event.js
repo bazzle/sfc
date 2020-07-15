@@ -3,6 +3,8 @@ import * as pn from './page_nav.js';
 import * as sb from './scroll_progress_indicator.js';
 import * as gv from './global_variables.js';
 
+console.log('yeeey');
+
 export const contentstart = document.querySelector('.pillar-content');
 const backtop = document.querySelector('.backtop');
 const backtopinner = document.querySelector('.backtop__inner');

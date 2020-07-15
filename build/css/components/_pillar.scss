@@ -1,6 +1,4 @@
 .pillar{
-
-
     .grid-space{
         padding:0;
         display:none;
@@ -16,28 +14,23 @@
     }
     
     &__section{
-        margin-top:$header-height-mobile;
-        @include break(large) {
-            margin-top:$header-height;
-        }
+        margin-top:$header-height-scroll;
         @include break(medium) {
             display:grid;
             grid-template-columns:repeat(3, 1fr);
-            grid-template-rows:auto auto auto auto 1fr;
+            grid-template-rows:auto auto auto 1fr;
             grid-template-areas:
             ". section_title section_title"
             ". section_intro section_intro"
-            "section_asidemain section_featured-image section_featured-image"
             "section_asidemain section_body section_body"
             "section_asidecontent section_body section_body";
         }
         @include break(large) {
             grid-template-columns:1fr minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) 1fr;
-            grid-template-rows:auto auto auto 1fr;
+            grid-template-rows:auto auto 1fr;
             grid-template-areas:
             "spaceleft . section_title section_title section_title spaceright"
             "spaceleft . section_intro section_intro section_intro spaceright"
-            "spaceleft section_asidemain section_featured-image section_featured-image section_asidecontent spaceright"
             "spaceleft section_asidemain section_body section_body section_asidecontent spaceright";
         }
         &__title{
@@ -45,9 +38,6 @@
         }
         &__intro{
             grid-area:section_intro;
-        }
-        &__featured-image{
-            grid-area:section_featured-image;
         }
         &__asidecontent{
             grid-area:section_asidecontent;
@@ -70,7 +60,7 @@
                 @include text-gap;
             }
             &__title{
-                @include title(4rem);
+                @include title-display(3.5rem);
             }
         }
 

@@ -1,10 +1,13 @@
 <?php
-    $authorname = get_the_author_meta('display_name');
-    $authoremail = get_the_author_meta('user_email');
-    $authordescription = get_the_author_meta('description');
-    $authorpagelink = get_the_author_meta( 'url' );
-    $twitter = get_the_author_meta( 'twitter', $post->post_author );
-    $instagram = get_the_author_meta( 'instagram', $post->post_author );
+    $authorid = '1';
+    $authoridacf = 'user_' . $authorid;
+    $authorname = get_field('author_box', $authoridacf)['author_name'];
+    $authoremail = get_field('author_box', $authoridacf)['author_email'];
+    $authorimage = get_field('author_box', $authoridacf)['author_image'];
+    $authorbio = get_field('author_box', $authoridacf)['author_short_bio'];
+    $authorpagelink = get_author_posts_url($authorid);
+    $twitter = get_field( 'author_box', $authoridacf)['author_twitter'];
+    $instagram = get_field( 'author_box', $authoridacf)['author_instagram'];
 ?>
 
 <div class="author">
@@ -13,7 +16,7 @@
     </div>
     <div class="author__about">
         <p class="author__about__description">
-            <?php echo $authordescription ?>
+            <?php echo $authorbio ?>
         </p>
         <p class="author__about__link">
             <a href="<?php echo $authorpagelink ?>">More about <?php echo $authorname ?></a>
@@ -21,9 +24,6 @@
     </div>
     <div class="author__socials">
         <hr class="author__socials__divider" />
-        <p class="author__socials__title">
-            Follow me on my socials
-        </p>
         <p class="author__socials__links">
             <?php if ( $twitter ){
                 echo '<a class="author__socials__links__item" href="https://twitter.com/' . $twitter .'" rel="nofollow" target="_blank">Twitter</a>';

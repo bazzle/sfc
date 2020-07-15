@@ -215,3 +215,10 @@ $aspect_8-5: 62.5%;
     justify-content:flex-end;
   }
 }
+
+@mixin header-height{
+  height:$header-height-mobile;
+  @include break(large) {
+      height:$header-height;
+  }
+}

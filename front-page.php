@@ -3,7 +3,6 @@
 <?php get_template_part('includes/section','content'); ?>
 
 
-
     <div class="home">
         <div class="home__hero">
             <?php get_template_part('includes/section','hero-home'); ?>

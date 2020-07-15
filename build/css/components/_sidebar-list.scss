@@ -1,7 +1,6 @@
 .sidebar-list{
     &__title{
-        @include text-blocky;
-        @include text-gap;
+        @include title-module;
     }
     &__list{
         @include break-under(medium) {

@@ -18,12 +18,12 @@ const menu_close = () => {
 }
 
 triggermenu.addEventListener('click',function(){
+  console.log('yeyeye');
   isopen ? menu_close() : menu_open();
 });
 
 triggermenu.addEventListener('keyup',function(e){
   if( e.key == 'Escape' && isopen == true ){
-    console.log('eye');
     menu_close();
   }
 });

@@ -1,21 +1,7 @@
 .author{
     background-color: $color-primary;
     color:$white;
-    @include break(tablet) {
-        display: block;
-        padding:$gap--tight;
-    }
-    @include break(medium) {
-        padding:$gap;
-    }
-    @include break(large) {
-        padding:$gap;
-        display: grid;
-        grid-template-columns:auto 1fr;
-        grid-template-areas:
-        "profile about"
-        "socials socials";
-    }
+    padding: $gap;
     &__profile{
         grid-area:profile;
     }
@@ -32,10 +18,7 @@
     &__profile{
         position: relative;
         @include align-center;
-        padding:0 0 $gap 0;
-        @include break(large) {
-            padding:0 $gap 0 0;
-        }
+        padding:0 0 $gap--tight 0;
         &__image{
             width: 90px;
             height:90px;
@@ -47,9 +30,6 @@
         @include text-tiny;
         max-width: none;
         text-align: center;
-        @include break(large) {
-            text-align: left;
-        }
         &__description{
             @include text-gap--tight;
         }
@@ -61,10 +41,10 @@
     }
     &__socials{
         text-align:center;
-        padding: $gap 0 0 0;
+        padding-top: $gap--tight;
         &__divider{
             @include divider--dark;
-            margin-bottom:$gap;
+            margin-bottom:$gap--tight;
         }
         &__title{
             @include text-blocky;

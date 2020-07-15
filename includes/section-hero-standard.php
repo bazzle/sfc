@@ -11,7 +11,7 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
 <?php endif ; ?>
 
 
-<div class="hero-std panel">
+<div class="hero-std panel panel--nospaced">
     <div class="grid-space hero-std__space-left"></div>
     <div class="hero-std__space-main"></div>
     <div class="hero-std__image">

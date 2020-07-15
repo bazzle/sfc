@@ -7,28 +7,18 @@
         $content = get_sub_field('section_content');
         $aside_content = get_sub_field('section_aside_content');
         $aside_main = get_sub_field('section_aside_main');
-        $featured_image = get_sub_field('section_featured_image');
     ?>
 
 
 
 
-    <section class="panel pillar__section">
+    <section class="panel panel--nospaced pillar__section">
                 
         <div class="grid-item grid-space article__space-left"></div>
         
 
         <div class="grid-item pillar__section__title">
-            <hr class="pillar__section__title__line"/>
             <h1 class="grid-item pillar__section__title__title"><?php echo $title ?></h1>
-        </div>
-
-        <div class="grid-item pillar__section__featured-image">
-            <?php if( $featured_image ) {
-                $url = $featured_image['url'];
-                $alt = $featured_image['alt'];
-                echo "<img class='pillar__section__featured-image__image' src='$url' alt='$alt'/>";
-            }; ?>
         </div>
 
         <div class="grid-item grid-space article__space-right"></div>

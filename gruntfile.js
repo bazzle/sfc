@@ -35,8 +35,8 @@ module.exports = function(grunt) {
     },
     browserify: {
         default: {
-          src: 'build/scripts/main.js',
-          dest: 'assets/scripts/main.js',
+          src: 'assets/scripts/main.js',
+          dest: 'build/scripts/main.js',
           options: {
               browserifyOptions: { debug: true },
               transform: [["babelify", { "presets": ["@babel/preset-env"] }]],
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         tasks: ["dart-sass"]
       },
       scripts: {
-        files: ["build/scripts/**/*.js"],
+        files: ["assets/scripts/**/*.js"],
         tasks: ["browserify"]
       }
     }

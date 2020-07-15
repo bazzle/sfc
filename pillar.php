@@ -1,12 +1,13 @@
 <?php /* Template Name: Pillar */ ?>
 
-
 <?php get_header(); ?>
+
     <article class="pillar">
+
         <?php get_template_part('includes/section', 'hero-pillar') ?>
 
 
-        <div class="panel pillar-head">
+        <div class="panel panel--nospaced pillar-head">
             
             <div class="grid-space article__space-left"></div>
 

@@ -2,6 +2,7 @@
 
 // paths
 $path-images: "../assets/images/";
+$path-fonts: "../assets/fonts/";
 
 // layout ==============================================
 
@@ -53,15 +54,33 @@ $color-body-heading:$color-primary;
 $color-tagline:$black;
 $color-selection:$color-accent;
 
-// font loading
+// typography ==============================================
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600&display=swap');
 
+// loading fonts
 
-// typography ==============================================
+@font-face {
+    font-family: feijoamedium;
+    src: url(../fonts/feijoa-test-medium.woff) format('woff');
+}
+@font-face {
+    font-family: feijoabold;
+    src: url(../fonts/feijoa-test-bold.woff) format('woff');
+}
+@font-face {
+    font-family: metricsemibold;
+    src: url(../fonts/metric-test-semibold.woff) format('woff');
+}
+@font-face {
+    font-family: metricbold;
+    src: url(../fonts/metric-test-bold.woff) format('woff');
+}
 
-$font-brand:'Archivo Black', sans-serif;
-$font-std:'Archivo', sans-serif;
+$font-display:'metricbold', sans-serif;
+$font-blocky:'metricsemibold', sans-serif;
+$font-std:'feijoamedium', sans-serif;
+$font-bold:'feijoabold', sans-serif;
 
 // font weights
 $weight-std-std:400;
@@ -71,7 +90,7 @@ $weight-std-bold:600;
 $font-size-base:10px;
 $font-size-mobile:1.4rem;
 $font-size-std:1.6rem;
-$font-size-tiny:1.4rem;
+$font-size-tiny:1.2rem;
 
 // line heights
 $line-height-std:1.7;
@@ -90,6 +109,7 @@ $s4:2rem;
 
 $header-height:120px;
 $header-height-mobile:80px;
+$header-height-scroll:80px;
 
 // misc styles =========================================
 

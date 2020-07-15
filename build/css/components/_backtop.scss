@@ -1,6 +1,6 @@
 // back to top button
 .backtop {
-    $color_text: $color-primary;
+    $color_text: $color-secondary;
     $color_bg: $white;
     $color_bg_darken: darken($color_bg, 8);
     border-radius: $border-radius $border-radius 0 0;
@@ -16,6 +16,7 @@
     &__inner{
         height:100%;
         position:relative;
+        background: $white;
         @keyframes fadeout{
             from{
                 opacity:1;
@@ -42,7 +43,6 @@
         }
         padding:1em 1.7em;
         @include align-center;
-        background-color:$color_bg_darken;
         border-radius: $border-radius;
         span {
             @include link-styled;
@@ -53,34 +53,17 @@
         }
         &:hover {
             background-color: $white;
+            color: $color-primary;
             span {
                 @include link-styled;
                 display:inline-block;
                 margin-left:1em;
                 color:$color-primary;
             }
-            .backtop__icon {
-                @keyframes pulse {
-                    0% {
-                        fill: $color-primary;
-                    }
-                    20% {
-                        fill: #ff4e2e;
-                    }
-                    80% {
-                        fill: #86e254;
-                    }
-                    100% {
-                        fill: $color-primary;
-                    }
-                }
-                animation: pulse 3s infinite;
-            }
         }
     }
     &__icon {
         transform: rotate(180deg);
-        color: $color-text;
         width: 30px;
         height: 30px;
     }

@@ -7,19 +7,28 @@
     background-color: $white;
     box-sizing: content-box;
     &__inner{
+        position: relative;
         width:100%;
         max-width:$site-width;
-        display:flex;
-        align-items:center;
-        height:100%;
-        height:$header-height;
-        padding: $gap/2;
+        padding:0 $gap/2;
+        @include break(site-width) {
+            padding:0;
+        }
     }
     &__logo-lockup{
-        display:block;
-        align-items:center;
-        height: 50px;
-        width: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include header-height;
+        @include align-center;
+        &__logo{
+            width: 200px;
+            height: 55px;
+            &__svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
     &__trigger{
         color:$black;
@@ -29,7 +38,7 @@
         align-items:center;
         background-color:transparent;
 
-        @include break(large) {
+        @include break(tablet) {
           display:none;
         }
         &__icon{
@@ -46,25 +55,58 @@
     }
     &__menu{
         display:none;
-        @include break(large) {
-            display:block;
-            margin-left:auto;
-        }
-        ul{
+        position:relative;
+        @include break(tablet) {
             display:flex;
             align-items:center;
+            justify-content: flex-end;
         }
-        li{
+        &__item{
             margin: 0;
-            a{
+            @include header-height;
+            .dropdown{
+                visibility: hidden;
+            }
+            .header__menu__item__arrow{
+                visibility: hidden;
+            }
+            &.link-active{
+                .dropdown{
+                    visibility: visible;
+                }
+                .header__menu__item__arrow{
+                    visibility: visible;
+                }
+            }
+            &__arrow{
+                display: none;
+                @include break(tablet) {
+                    position: absolute;
+                    z-index: 1;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translate(-50%, 50%);
+                }
+                span{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    transform: rotate(45deg);
+                    transform-origin: center;
+                    background: #EFEFEF;
+                }
+            }
+            &__link{
                 display: block;
                 @include text-blocky--lower;
                 height: 100%;
                 @include align-center;
                 padding:0 2em;
-                &:last-of-type{
-                    padding-right:0;
-                }
+                position: relative;
             }
         }
     }

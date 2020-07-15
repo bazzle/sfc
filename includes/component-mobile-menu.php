@@ -4,13 +4,7 @@
             <div class="mobile-menu__inner nav">
                 <div class="mobile-menu__group">
                     <nav class="header__menu nav">
-                        <?php
-                            wp_nav_menu(
-                                array(
-                                    'theme_location' => 'main-menu'
-                                )
-                            )
-                        ?>
+                        Mobile menu here
                     </nav>
                 </div>
             </div>
