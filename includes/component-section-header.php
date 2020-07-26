@@ -1,8 +1,5 @@
-<?php
-    $title = get_sub_field('title');
-?>
-<?php if ($title) : ?>
+<?php if ($sectiontitle) : ?>
 <div class="panel__title">
-    <h3><?php echo $title ?></h3>
+    <h3><?php echo $sectiontitle ?></h3>
 </div>
 <?php endif; ?>

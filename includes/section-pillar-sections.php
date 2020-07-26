@@ -1,5 +1,5 @@
-<?php if( have_rows('sections') ): ?>
-    <?php while( have_rows('sections') ): the_row();
+<?php if( have_rows('sections', $term) ): ?>
+    <?php while( have_rows('sections', $term) ): the_row();
 
         // vars
         $title = get_sub_field('section_title');
@@ -9,7 +9,7 @@
         $aside_main = get_sub_field('section_aside_main');
     ?>
 
-
+    
 
 
     <section class="panel panel--nospaced pillar__section">

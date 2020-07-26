@@ -4,15 +4,25 @@
     $authorname = get_field('author_box', $authoridacf)['author_name'];
     $authoremail = get_field('author_box', $authoridacf)['author_email'];
     $authorimage = get_field('author_box', $authoridacf)['author_image'];
+    $authorgravatar = get_avatar_url($authoremail);
     $authorbio = get_field('author_box', $authoridacf)['author_short_bio'];
     $authorpagelink = get_author_posts_url($authorid);
     $twitter = get_field( 'author_box', $authoridacf)['author_twitter'];
     $instagram = get_field( 'author_box', $authoridacf)['author_instagram'];
+    $skin = get_field('author_skin');
+    if ($skin = 'dark') {
+        $authorbg = 'author--dark';
+    } elseif ($skin = 'light') {
+        $authorbg = 'author--light';
+    }
+    if (empty($authorimage)){
+        $authorimage = $authorgravatar;
+    };
 ?>
 
-<div class="author">
+<div class="author <?php echo $authorbg ?>">
     <div class="author__profile">
-        <img class="author__profile__image" src="<?php echo get_avatar_url($authoremail) ?>" alt="" class="author__profile__image">
+        <img class="author__profile__image" src="<?php echo $authorimage ?>" alt="" class="author__profile__image">
     </div>
     <div class="author__about">
         <p class="author__about__description">
@@ -33,4 +43,5 @@
             }; ?>
         </p>
     </div>
+    <div class="author__arrow"><span></span></div>
 </div>

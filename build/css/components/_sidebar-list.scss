@@ -1,36 +1,12 @@
 .sidebar-list{
-    &__title{
-        @include title-module;
+    display: grid;
+    grid-gap:$gap--tight;
+    grid-auto-rows: auto;
+    grid-template-columns:1fr 1fr;
+    @include break(tablet) {
+        grid-template-columns:repeat(4, 1fr);
     }
-    &__list{
-        @include break-under(medium) {
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            grid-gap:$gap--tight;
-            grid-auto-rows: auto;
-        }
-    }
-    &__item{
-        @include align(center, center);
-        padding-bottom: $gap/2;
-        margin-bottom: 0;
-        &:first-of-type{
-            border-top: 0;
-            padding-top: 0;
-        }
-        &__title{
-            line-height:1.4;
-            @include text-std;
-        }
-        &__image{
-            display: block;
-            width: 40%;
-            padding-right:1em;
-            flex-shrink:0;
-            img{
-                display: block;
-                height: auto;
-            }
-        }
+    @include break(medium) {
+        grid-template-columns:1fr;
     }
 }

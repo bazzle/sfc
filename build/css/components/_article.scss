@@ -34,21 +34,18 @@
     
     &__asidecontent{
         grid-area:asidecontent;
-        // display:none;
     }
     &__body{
         grid-area:body;
-        // display:none;
     }
     &__asidemain{
         grid-area:asidemain;
     }
     &__share{
         grid-area:share;
-        // display:none;
     }
     &__body{
-        @extend %text-body;
+        @extend %text-body-format;
         padding:0 $gap--tight;
         @include break(tablet) {
             padding:0 $gap;
@@ -69,13 +66,13 @@
     &__asidecontent{
         padding:$gap--tight;
         @include break(tablet) {
-            padding:$gap 0 $gap $gap;
+            padding:$gap;
         }
         @include break(medium) {
             padding:0 0 $gap $gap;
         }
         @include break(large) {
-            padding:0 $gap 0 0;
+            padding:0;
         }
         p{
             display: none;

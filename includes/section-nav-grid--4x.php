@@ -1,4 +1,3 @@
-<?php get_template_part('includes/component','section-header'); ?>
 <div class="panel__inner--margins">
     <?php if (have_rows('4x_dropdown')) : ?>
         <?php while( have_rows('4x_dropdown') ): the_row() ; ?>

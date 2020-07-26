@@ -1,5 +1,5 @@
 .body-content{
-  @extend %text-body;
+  @extend %text-body-format;
   blockquote{
     &.pq{
       margin:$gap;

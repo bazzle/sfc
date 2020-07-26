@@ -1,4 +1,5 @@
 .hero-home{
+    $color-bg:$color-bg-grey;
     $height:700px;
     .grid-space{
         display:none;
@@ -39,46 +40,34 @@
     // Styling --------
 
     &__image{
-        position:relative;
-        width: 100%;
-        height: 100%;
-        img{
-            position:absolute;
-            left:0;
-            top:0;
-            display:block;
-            width:100%;
-            height:100%;
-            object-fit:cover;
-        }
+        @include image--rect;
     }
     &__intro{
-        @include component-reverse;
         position:relative;
         display: flex;
         flex-direction: column;
         padding:$gap--tight;
+        background: $color-bg;
         @include break(tablet) {
             padding:$gap;
+            justify-content: center;
+
         }
         @include break(medium) {
             padding:$gap*2;
-            padding-bottom:$gap;
         }
         @include break(site-width) {
             border-top-left-radius: 5px;
         }
         &__title{
-            @include title-display(4.2rem);
+            @include title-display(3.8rem);
             margin-bottom:$gap--tight;
-            @include break(medium){
-                margin-bottom: $gap;
-            }
         }
         &__intro{
             margin-bottom:$gap--tight;
+            @include text-body;
             @include break(medium){
-                margin-bottom: $gap;
+                margin-bottom: $gap--tight;
             }
         }
         &__divider{
@@ -90,6 +79,9 @@
         }
         &__link{
             margin-bottom:$gap--tight;
+            @include break(medium) {
+                margin-bottom: 0;
+            }
             &__link{
                 @include link-styled;
             }
@@ -112,7 +104,7 @@
                 height: 100%;
                 transform: rotate(45deg);
                 transform-origin: center;
-                background: $color-primary;
+                background: $color-bg;
             }
         }
     }

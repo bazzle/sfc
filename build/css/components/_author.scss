@@ -1,7 +1,12 @@
 .author{
-    background-color: $color-primary;
-    color:$white;
     padding: $gap;
+    position:relative;
+    display: none;
+    height: 100%;
+    background-color: $color-bg-grey;
+    @include break(medium) {
+        display: block;
+    }
     &__profile{
         grid-area:profile;
     }
@@ -11,27 +16,26 @@
     &__socials{
         grid-area:socials;
     }
-    a{
-        color:$white;
-    }
 
     &__profile{
         position: relative;
         @include align-center;
         padding:0 0 $gap--tight 0;
         &__image{
-            width: 90px;
-            height:90px;
+            width: 100px;
+            height:100px;
             display: block;
             border-radius:50%;
+            border: 3px solid $color-primary;
         }
     }
     &__about{
-        @include text-tiny;
         max-width: none;
         text-align: center;
         &__description{
-            @include text-gap--tight;
+            font-family:$font-std--sans;
+            line-height: $line-height--tight;
+            margin-bottom: $gap--tight/2;
         }
         &__link{
             a{
@@ -43,7 +47,7 @@
         text-align:center;
         padding-top: $gap--tight;
         &__divider{
-            @include divider--dark;
+            @include divider--light;
             margin-bottom:$gap--tight;
         }
         &__title{
@@ -54,6 +58,68 @@
             &__item{
                 margin:.5em;
                 @include link-styled();
+            }
+        }
+    }
+    &__arrow{
+        display: none;
+        @include break(medium) {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+        span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            transform: rotate(45deg);
+            transform-origin: center;
+            background: $color-bg-grey;
+        }
+    }
+    &--dark{
+        @include component-dark;
+        background-color: $color-primary;
+        .author{
+            &__arrow{
+                span{
+                    background:$color-primary;
+                }
+            }
+            &__socials{
+                &__divider{
+                    @include divider--dark;
+                }
+            }
+            &__profile{
+                &__image{
+                    border-color: $white;
+                }
+            }
+        }
+    }
+    &--light{
+        @include component-light;
+        background-color: $color-bg-grey;
+        .author{
+            &__arrow{
+                span{
+                    background:$color-primary;
+                }
+            }
+            &__socials{
+                &__divider{
+                    @include divider--dark;
+                }
+            }
+            &__profile{
+                &__image{
+                    border-color: $color-primary;
+                }
             }
         }
     }

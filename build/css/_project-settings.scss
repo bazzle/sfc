@@ -29,6 +29,10 @@ $color-primary-feint:lighten($color-primary, 30);
 $color-secondary:#21c4d3;
 $color-secondary-feint:lighten($color-secondary, 30);
 $color-accent:#21c4d3;
+
+$color-bg-beige:#FFF6E4;
+$color-bg-grey:#EFEFEF;
+
 $color-feint:#f2f2f2;
 $color-feint-1:#f2f2f2;
 $color-feint-2:#EBEBEB;
@@ -73,6 +77,10 @@ $color-selection:$color-accent;
     src: url(../fonts/metric-test-semibold.woff) format('woff');
 }
 @font-face {
+    font-family: metricmedium;
+    src: url(../fonts/metric-test-medium.woff) format('woff');
+}
+@font-face {
     font-family: metricbold;
     src: url(../fonts/metric-test-bold.woff) format('woff');
 }
@@ -80,6 +88,7 @@ $color-selection:$color-accent;
 $font-display:'metricbold', sans-serif;
 $font-blocky:'metricsemibold', sans-serif;
 $font-std:'feijoamedium', sans-serif;
+$font-std--sans:'metricmedium', sans-serif;
 $font-bold:'feijoabold', sans-serif;
 
 // font weights
@@ -89,7 +98,7 @@ $weight-std-bold:600;
 // font-size;
 $font-size-base:10px;
 $font-size-mobile:1.4rem;
-$font-size-std:1.6rem;
+$font-size-std:1.8rem;
 $font-size-tiny:1.2rem;
 
 // line heights
@@ -107,7 +116,7 @@ $s4:2rem;
 
 // header ==============================================
 
-$header-height:120px;
+$header-height:180px;
 $header-height-mobile:80px;
 $header-height-scroll:80px;
 

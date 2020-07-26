@@ -1,25 +1,41 @@
-<div class="hero-single panel">
-    <div class="panel__container">
-      
-      <div class="hero-single__inner">
-        <div class="hero-single__main">
-            <div class="hero-single__divider">
-                <?php get_template_part('includes/component', 'divider-down') ?>
-            </div>
-            <div class="hero-single--title-lockup">
-                <h1 class="hero-single__title hero-single__title--small"><?php the_title(); ?></h1>
-                <div class="hero-single__meta">
-                    <p>
-                        <span>Holborn, London EC1N 7TJ</span>
-                        <span>By <?php the_author(); ?> <?php the_date() ?></span>
-                    </p>
+<footer class="footer component-dark">
+    <div class="panel">
+        <div class="panel__inner">
+                <div class="grid grid-4x">
+                    <div class="grid-4x__item grid-4x__block-1">
+                        <nav class="footer__menu">
+                            <?php
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'footer-menu-1'
+                                    )
+                                )
+                            ?>
+                        </nav>
+                    </div>
+                    <div class="grid-4x__item grid-4x__block-2">
+                        <?php $block = 'block_2_feature_block' ?>
+                        <nav class="footer__menu">
+                        <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'footer-menu-2'
+                                )
+                            )
+                        ?>
+                        </nav>
+                    </div>
+                    <div class="grid-4x__item grid-4x__block-3">
+                        <div class="footer__links footer-links-3">
+                            Let's be social
+                        </div>
+                    </div>
+                    <div class="grid-4x__item grid-4x__block-4">
+                        <div class="footer__links footer-links-3">
+                            Let's be social
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
-        <div class="hero-single__image">
-            <img src="http://street-food-city.local/wp-content/uploads/2020/04/girls-at-street-food-markets-uk.jpg" alt="Girls">
-        </div>
-      </div>
-      
     </div>
-</div>
+</footer>

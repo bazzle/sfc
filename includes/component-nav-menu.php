@@ -7,11 +7,15 @@
         $layoutconfig = get_sub_field('layout_configuration');
         $readmorelink = get_sub_field('more_link')['url'];
         $readmorelinktext = get_sub_field('more_link')['title'];
+        $subnav = get_sub_field('subnav');
         ?>
         <li class="header__menu__item">
             <a class="header__menu__item__link" href="<?php echo $link ?>"><?php echo $name ?>
+                <?php if ($subnav) : ?>
                 <div class="header__menu__item__arrow"><span></span></div>
+                <?php endif; ?>
             </a>
+            <?php if ($subnav) : ?>
             <div class="dropdown">
                 <div class="dropdown__blocks">
                     <?php if($layoutconfig == '4x') : ?>
@@ -22,6 +26,7 @@
                     <?php include (locate_template('includes/component-cta-line.php')); ?>
                 </div>
             </div>
+            <?php endif; ?>
         </li>
         <?php endwhile;  ?>
     </ul>

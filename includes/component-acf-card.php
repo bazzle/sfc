@@ -7,10 +7,11 @@
         $moduletitle = get_sub_field('module_title');
         $imagepath = get_sub_field('block_image')['url'];
         $imagealt = get_sub_field('block_image')['alt'];
-        $text = get_sub_field('block_text');
+        $text = wpautop(get_sub_field('block_text'));
         $link = get_sub_field('block_link');
         $readmorelink = get_sub_field('read_more_link');
         $readmorelinktext = get_sub_field('read_more_link_text') ?>
+        
         <?php
         if ($block_type === 'image_block') {
             include( locate_template( 'includes/component-block--image.php', false, false ) );

@@ -1,17 +1,17 @@
 // html ================================================
 
 html {
-  font-family: $font-std;
   font-size:$font-size-base;
 }
 
 // body
 body {
+  font-family: $font-std--sans;
   font-size:$font-size-mobile;
   @include break(phone) {
     font-size:$font-size-std;
   }
-  line-height:$line-height-std;
+  line-height:$line-height--tight;
   background-color:$color-bg;
   color:$black;
 }
@@ -36,16 +36,15 @@ body{
 
 .header{
   position:relative;
-  @include header-height;
 }
 
 // main
 main{
   position:relative;
-  padding-top:$header-height-mobile;
+  margin-top:$header-height-mobile;
   flex-grow: 1;
   @include break(large) {
-      padding-top:$header-height;
+      margin-top:$header-height;
   }
 }
 
@@ -121,7 +120,7 @@ svg path{
 // Blocky text lowercase
 @mixin text-blocky--lower($font-size:1.4rem){
   font-family:$font-blocky;
-  line-height: $line-height-std;
+  line-height: $line-height--tight;
   font-weight: $weight-std-bold;
   letter-spacing: .05em;
   @include break(phone) {
@@ -171,16 +170,32 @@ svg path{
 
 
 
-// normal body text
+
+
+
+
+// normal text
 @mixin text-std{
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-family:$font-std--sans;
+  @include break(medium) {
+    font-size:1.8rem;
+    line-height:1.2;
+  }
+}
+
+// body text
+@mixin text-body{
   font-size: $font-size-mobile;
   line-height: $line-height--tight;
   font-family:$font-std;
   @include break(medium) {
-    font-size:$font-size-std;
-    line-height:$line-height-std;
+    font-size:1.4rem;
+    line-height:1.6;
   }
 }
+
 
 @mixin text-tiny{
   font-size:$font-size-tiny;
@@ -230,7 +245,7 @@ svg path{
 // title display
 @mixin title-display($size:5rem){
   font-size: 3rem;
-  line-height:1.2;
+  line-height:1.1;
   font-family:$font-display;
   @include break(tablet) {
     font-size: 3rem;
@@ -264,10 +279,11 @@ svg path{
 
 // title block –– titles for cards mainly
 @mixin title-block($font-size:2.6rem){
-  font-family:$font-blocky;
   line-height:1.2;
-  font-weight:$weight-std-bold;
-  font-size:2.2rem;
+  font-size:$font-size-mobile;
+  @include break(medium) {
+    font-size:$font-size-std;
+  }
   @include break(large) {
     font-size:$font-size;
   }
@@ -302,9 +318,9 @@ svg path{
 }
 
 // text body
-%text-body{
-  h1, h2, h3, h4, h5, img, p, ul, li{
-    @include text-gap;
+%text-body-format{
+  h1, h2, h3, h4, h5, img, p, ul, ol{
+    @include text-gap--tight;
   }
   font-family:$font-std;
   line-height:$line-height-std;
@@ -324,7 +340,7 @@ svg path{
     font-size:2.2rem;
   }
   h4, h5{
-    font-size:inherit;
+    font-size:2rem;
     color:inherit;
   }
   p{
@@ -358,10 +374,6 @@ svg path{
     background-color:$white;
     padding:1em;
   }
-}
-
-@mixin text-body{
-  @extend %text-body;
 }
 
 // LAYOUT ====================================================================================================
@@ -559,16 +571,26 @@ img{
 
 // component globals
 
-@mixin component-reverse{
+@mixin component-dark{
   color:$white;
   background-color:$color-primary;
   h1, h2, h3, h4, h5, ul, ol, p, a{
     color:$white;
   }
 }
+@mixin component-light{
+  color:$color-primary;
+  background-color:$white;
+  h1, h2, h3, h4, h5, ul, ol, p, a{
+    color:$color-primary;
+  }
+}
 
-.component-reverse{
-  @include component-reverse;
+.component-dark{
+  @include component-dark;
+}
+.component-dark{
+  @include component-light;
 }
 
 .component-title{
@@ -666,5 +688,23 @@ img{
     position: relative;
     top: 0;
     background-color: black;
+  }
+}
+
+@mixin divider--light{
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  height: 2px;
+  display: block;
+  position: relative;
+  margin-bottom: 4rem;
+  &:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: relative;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }

@@ -1,15 +1,14 @@
 // scroll event ---------------------------------------------
-import * as pn from './page_nav.js';
 import * as sb from './scroll_progress_indicator.js';
 import * as gv from './global_variables.js';
 
-console.log('yeeey');
-
-export const contentstart = document.querySelector('.pillar-content');
 const backtop = document.querySelector('.backtop');
 const backtopinner = document.querySelector('.backtop__inner');
+const contentstart = document.querySelector('main');
 const contentoffset = contentstart.getBoundingClientRect().top + pageYOffset;
-const allelems = [sb.progress_indicator, pn.pagenav, backtop];
+const header = document.querySelector('.header');
+const allelems = [sb.progress_indicator, backtop];
+const body = document.querySelector('body');
 let scrolldelay;
 var isitdown;
 
@@ -36,24 +35,30 @@ const fadein = () => {
 
 const hideshow = function(){
   window.onscroll = () => {
-    sb.scrollbar();
+    if (body.classList.contains('archive')){
+      sb.scrollbar();
+    }
     if ( window.pageYOffset < contentoffset ){
-      allelems.forEach( (e) => {
-        e.classList.remove('visible');
-        e.classList.add('hidden');
-      });
+      if (body.classList.contains('archive')){
+        allelems.forEach( (e) => {
+          e.classList.remove('visible');
+          e.classList.add('hidden');
+        });
+      }
+      header.classList.remove('header--shallow');
     } else {
-      allelems.forEach( (e) => {
-        e.classList.add('visible');
-        e.classList.remove('hidden');
-      });
+      if (body.classList.contains('archive')){
+        allelems.forEach( (e) => {
+          e.classList.add('visible');
+          e.classList.remove('hidden');
+        });
+      }
+      header.classList.add('header--shallow');
     }
     if(gv.mq_small.matches){
       backtopfunc();
     }
   }
 };
-
-
 
 hideshow();

@@ -1,5 +1,4 @@
 <?php
-$term = get_queried_object();
 $bgcolor1 = get_field( "background_colour_1", $term );
 $bgcolor2 = get_field( "background_colour_2", $term );
 $title = get_field( "title", $term );

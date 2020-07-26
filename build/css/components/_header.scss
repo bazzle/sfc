@@ -1,69 +1,63 @@
 .header{
     width:100%;
     z-index:10;
-    @include align(center, center);
     position: fixed;
+    @include break(tablet) {
+        position: absolute;
+    }
     top: 0;
-    background-color: $white;
     box-sizing: content-box;
+    background: $white;
     &__inner{
-        position: relative;
-        width:100%;
-        max-width:$site-width;
-        padding:0 $gap/2;
-        @include break(site-width) {
-            padding:0;
+        @include header-height;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        @include break(tablet) {
+            padding-top: $gap--tight;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 80px;
         }
     }
     &__logo-lockup{
-        position: absolute;
-        top: 0;
-        left: 0;
-        @include header-height;
-        @include align-center;
+        @include break-under(tablet) {
+            @include align-left-center;
+            height: $header-height-mobile;
+        }
+        @include break(tablet) {
+            @include align-center;
+        }
         &__logo{
-            width: 200px;
-            height: 55px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: $header-height-mobile;
+            max-width: 200px;
+            position: relative;
+            @include break(tablet) {
+                max-width: 300px;
+                height: 50px;
+                max-height: none;
+            }
             &__svg{
                 width: 100%;
                 height: 100%;
             }
         }
     }
-    &__trigger{
-        color:$black;
-        margin-left:auto;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
-        background-color:transparent;
-
-        @include break(tablet) {
-          display:none;
-        }
-        &__icon{
-            width:20px;
-            height:20px;
-        }
-        &__label{
-            @include text-blocky;
-            line-height:1;
-            margin-right:.5em;
-            position:relative;
-            top:.15em;
-        }
-    }
     &__menu{
+        $height:80px;
         display:none;
         position:relative;
+        width: 100%;
         @include break(tablet) {
             display:flex;
             align-items:center;
-            justify-content: flex-end;
+            justify-content: center;
+            height:$height;
         }
         &__item{
             margin: 0;
-            @include header-height;
+            height:$height;
             .dropdown{
                 visibility: hidden;
             }
@@ -97,7 +91,7 @@
                     height: 100%;
                     transform: rotate(45deg);
                     transform-origin: center;
-                    background: #EFEFEF;
+                    background: $color-bg-grey;
                 }
             }
             &__link{
@@ -108,6 +102,29 @@
                 padding:0 2em;
                 position: relative;
             }
+        }
+    }
+    &__trigger{
+        color:$black;
+        margin-left:auto;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        background-color:transparent;
+
+        @include break(tablet) {
+          display:none;
+        }
+        &__icon{
+            width:20px;
+            height:20px;
+        }
+        &__label{
+            @include text-blocky;
+            line-height:1;
+            margin-right:.5em;
+            position:relative;
+            top:.15em;
         }
     }
 }

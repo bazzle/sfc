@@ -7,7 +7,7 @@ export const scrollbar = () => {
   // display height
   var displayheight = window.innerHeight;
   // pillar
-  var pillarcontent = document.querySelector('.pillar-content');
+  var pillarcontent = document.querySelector('.article');
   // body height
   var bodyheight = document.body.clientHeight;
   // pillar content height

@@ -3,6 +3,12 @@
         .hero-pillar{
             background: linear-gradient(<?php echo $bgcolor1 ?>, <?php echo $bgcolor2 ?>);
         }
+        .hero-pillar__author{
+            background:<?php echo $bgcolor2 ?>;
+        }
+        .hero-pillar__author__arrow span{
+            background:<?php echo $bgcolor2 ?>;
+        }
     </style>
 <?php endif ; ?>
 
@@ -32,8 +38,5 @@
         <p>
             <?php echo $intro ?>
         </p>
-    </div>
-    <div class="hero-pillar__author">
-        <?php get_template_part('includes/component','author'); ?>
     </div>
 </div>

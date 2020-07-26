@@ -15,6 +15,9 @@
     
     &__section{
         margin-top:$header-height-scroll;
+        &:nth-of-type(odd){
+            background-color:$color-bg-beige;
+        }
         @include break(medium) {
             display:grid;
             grid-template-columns:repeat(3, 1fr);
@@ -66,7 +69,6 @@
 
 
         &__featured-image{
-            background:$white;
             padding:0 $gap--tight $gap--tight $gap--tight;
             &__image{
                 width: 100%;
@@ -77,7 +79,6 @@
             }
         }
         &__intro{
-            background:$white;
             padding:0 $gap--tight $gap--tight $gap--tight;
             @include break(tablet) {
                 padding:0 $gap $gap $gap;
@@ -90,7 +91,7 @@
             }
         }
         &__body{
-            @extend %text-body;
+            @extend %text-body-format;
             padding:0 $gap--tight;
             @include break(tablet) {
                 padding:0 $gap;
@@ -113,18 +114,17 @@
         &__asidecontent{
             padding:$gap--tight;
             @include break(tablet) {
-                padding:$gap 0 $gap $gap;
+                padding:$gap;
             }
             @include break(medium) {
                 padding:0 0 $gap $gap;
             }
             @include break(large) {
-                padding:0 $gap 0 0;
+                padding:0;
             }
             p{
                 display: none;
             }
         }
     }
-
 }

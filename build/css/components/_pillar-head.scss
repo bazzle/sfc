@@ -29,7 +29,7 @@
         grid-area:asidemain;
     }
     &__body{
-        @extend %text-body;
+        @extend %text-body-format;
         padding:$gap--tight;
         @include break(tablet) {
             padding:$gap;
@@ -44,10 +44,13 @@
     &__asidecontent{
         padding:$gap--tight;
         @include break(tablet) {
-            padding:$gap 0 $gap $gap;
+            padding:$gap;
         }
         @include break(medium) {
-            padding:0 $gap 0 $gap;
+            padding:0 0 $gap $gap;
+        }
+        @include break(large) {
+            padding:0 $gap 0 0;
         }
         p{
             display: none;
@@ -59,7 +62,7 @@
             padding:$gap 0 $gap $gap;
         }
         @include break(large) {
-            padding:0 0 $gap 0;
+            padding:0;
         }
         p{
             display: none;

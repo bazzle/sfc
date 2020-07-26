@@ -1,4 +1,5 @@
 <?php 
+$heroimage = get_field("hero_image");
 $bgcolor1 = get_field( "background_colour_1" );
 $bgcolor2 = get_field( "background_colour_2" );
 
@@ -13,9 +14,8 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
 
 <div class="hero-std panel panel--nospaced">
     <div class="grid-space hero-std__space-left"></div>
-    <div class="hero-std__space-main"></div>
     <div class="hero-std__image">
-        <?php echo get_the_post_thumbnail() ?>
+        <img src="<?php echo $heroimage['url'] ?>" alt="<?php echo $heroimage['alt'] ?>">
     </div>
     <div class="grid-space hero-std__space-right--nobg"></div>
     <div class="hero-std__title-lockup">
@@ -40,6 +40,5 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
     </div>
     <div class="hero-std__author">
         <?php get_template_part('includes/component','author'); ?>
-        <div class="hero-std__author__arrow"><span></span></div>
     </div>
 </div>

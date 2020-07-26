@@ -216,9 +216,55 @@ $aspect_8-5: 62.5%;
   }
 }
 
+
+// Responsive header height
+
 @mixin header-height{
   height:$header-height-mobile;
-  @include break(large) {
+  @include break(tablet) {
       height:$header-height;
+  }
+}
+
+
+// Make image square
+
+@mixin image--square{
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background: gold;
+  position: relative;
+  img{
+      position:absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+  }
+}
+
+
+
+
+
+// Make image rectangle
+
+@mixin image--rect{
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 80%;
+  background: gold;
+  position: relative;
+  img{
+      position:absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
   }
 }
