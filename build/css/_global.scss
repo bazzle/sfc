@@ -95,7 +95,6 @@ svg path{
   font-family:$font-blocky;
   line-height: $line-height-std;
   text-transform:uppercase;
-  font-weight: $weight-std-bold;
   letter-spacing: .05em;
   font-size:$font-size;
   p{
@@ -108,7 +107,6 @@ svg path{
   font-family:$font-blocky;
   line-height: $line-height-std;
   text-transform:uppercase;
-  font-weight: $weight-std-bold;
   letter-spacing: .05em;
   font-size:$font-size;
   p{
@@ -121,7 +119,6 @@ svg path{
 @mixin text-blocky--lower($font-size:1.4rem){
   font-family:$font-blocky;
   line-height: $line-height--tight;
-  font-weight: $weight-std-bold;
   letter-spacing: .05em;
   @include break(phone) {
     font-size:$font-size;
@@ -188,7 +185,7 @@ svg path{
 // body text
 @mixin text-body{
   font-size: $font-size-mobile;
-  line-height: $line-height--tight;
+  line-height: $line-height-std;
   font-family:$font-std;
   @include break(medium) {
     font-size:1.4rem;
@@ -199,7 +196,6 @@ svg path{
 
 @mixin text-tiny{
   font-size:$font-size-tiny;
-  font-weight: $weight-std-bold;
   line-height:1.4;
 }
 
@@ -278,22 +274,16 @@ svg path{
 }
 
 // title block –– titles for cards mainly
-@mixin title-block($font-size:2.6rem){
+@mixin title-block($font-size:2.4rem){
   line-height:1.2;
-  font-size:$font-size-mobile;
-  @include break(medium) {
-    font-size:$font-size-std;
-  }
-  @include break(large) {
-    font-size:$font-size;
-  }
+  font-size: clamp(2rem, 3vw, $font-size );
 }
 
 // title module
 @mixin title-module{
   @include text-blocky;
   text-align: left;
-  padding:$gap--tight 0;
+  padding:$gap 0;
   padding-top: 0;
   @include break(site-width) {
     padding-left: 0;
@@ -332,6 +322,8 @@ svg path{
   h1, h2, h3, h4, h5{
     color:$color-body-heading;
     @include title;
+    position: relative;
+    bottom:0.02em;
   }
   h1, h2{
     font-size:3.2rem;

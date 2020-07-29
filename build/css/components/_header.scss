@@ -58,6 +58,7 @@
         &__item{
             margin: 0;
             height:$height;
+
             .dropdown{
                 visibility: hidden;
             }
@@ -75,7 +76,6 @@
             &__arrow{
                 display: none;
                 @include break(tablet) {
-                    position: absolute;
                     z-index: 1;
                     display: block;
                     width: 20px;
@@ -96,7 +96,7 @@
             }
             &__link{
                 display: block;
-                @include text-blocky--lower;
+                @include text-blocky--lower(1.8rem);
                 height: 100%;
                 @include align-center;
                 padding:0 2em;

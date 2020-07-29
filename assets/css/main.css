@@ -140,7 +140,6 @@ svg path {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   color: blue;
@@ -153,7 +152,6 @@ svg path {
 .text-blocky--lower {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.2;
-  font-weight: 600;
   letter-spacing: 0.05em;
 }
 @media screen and (min-width: 560px) {
@@ -169,7 +167,6 @@ svg path {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
 }
@@ -182,11 +179,10 @@ svg path {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   text-align: left;
-  padding: 3rem 0;
+  padding: 6rem 0;
   padding-top: 0;
 }
 .title-module p {
@@ -222,6 +218,8 @@ svg path {
   color: #21201f;
   font-family: "metricsemibold", sans-serif;
   font-size: 3.2rem;
+  position: relative;
+  bottom: 0.02em;
 }
 @media screen and (max-width: 560px) {
   .body-content h1, .article__body h1, .pillar-head__body h1, .pillar__section__body h1, .body-content h2, .article__body h2, .pillar-head__body h2, .pillar__section__body h2, .body-content h3, .article__body h3, .pillar-head__body h3, .pillar__section__body h3, .body-content h4, .article__body h4, .pillar-head__body h4, .pillar__section__body h4, .body-content h5, .article__body h5, .pillar-head__body h5, .pillar__section__body h5 {
@@ -323,11 +321,10 @@ svg path {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   text-align: left;
-  padding: 3rem 0;
+  padding: 6rem 0;
   padding-top: 0;
 }
 .panel__title p {
@@ -420,7 +417,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   padding-bottom: 4rem;
@@ -498,7 +494,6 @@ img {
 }
 .button--small {
   font-size: 1.2rem;
-  font-weight: 600;
   line-height: 1.4;
 }
 @media screen and (min-width: 560px) {
@@ -537,17 +532,7 @@ img {
 .locations-listing__card__title {
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
-  font-size: 1.4rem;
-}
-@media screen and (min-width: 960px) {
-  .locations-listing__card__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .locations-listing__card__title {
-    font-size: 2.6rem;
-  }
+  font-size: clamp(2rem, 3vw, 2.4rem);
 }
 .locations-listing__card__description {
   font-size: 1.2rem;
@@ -616,21 +601,25 @@ img {
 }
 .dropdown__block__title {
   line-height: 1.2;
-  font-size: 1.4rem;
+  font-size: clamp(2rem, 3vw, 2.2rem);
   margin-bottom: 1.5rem;
 }
-@media screen and (min-width: 960px) {
-  .dropdown__block__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .dropdown__block__title {
-    font-size: 2rem;
-  }
-}
 .dropdown__block__text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  font-family: "feijoamedium", sans-serif;
+}
+@media screen and (max-width: 700px) {
+  .dropdown__block__text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 960px) {
+  .dropdown__block__text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
 }
 .dropdown__block__link {
   color: inherit;
@@ -650,7 +639,7 @@ img {
   border-bottom: 2px solid #21c4d3;
   display: inline;
   font-family: "metricsemibold", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 0;
 }
 .dropdown__block__list ul li a:hover {
@@ -678,11 +667,10 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   text-align: left;
-  padding: 3rem 0;
+  padding: 6rem 0;
   padding-top: 0;
 }
 .post-list__title p {
@@ -706,18 +694,8 @@ img {
 }
 .post-list__item__title {
   line-height: 1.2;
-  font-size: 1.4rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   margin-bottom: 1.5rem;
-}
-@media screen and (min-width: 960px) {
-  .post-list__item__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .post-list__item__title {
-    font-size: 2.6rem;
-  }
 }
 @media screen and (min-width: 700px) {
   .post-list__item__title {
@@ -745,7 +723,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
   padding-right: 1.5rem;
@@ -935,7 +912,7 @@ img {
 }
 @media screen and (min-width: 1280px) {
   .pillar__section__asidecontent {
-    padding: 0;
+    padding: 0 0 6rem 6rem;
   }
 }
 .pillar__section__asidecontent p {
@@ -1102,7 +1079,7 @@ img {
 }
 @media screen and (min-width: 1280px) {
   .pillar-head__asidecontent {
-    padding: 0;
+    padding: 0 0 6rem 6rem;
   }
 }
 .pillar-head__asidecontent p {
@@ -1223,7 +1200,7 @@ img {
 }
 @media screen and (min-width: 1280px) {
   .article__asidecontent {
-    padding: 0;
+    padding: 0 0 0 6rem;
   }
 }
 .article__asidecontent p {
@@ -1310,17 +1287,7 @@ img {
 .card__title {
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
-  font-size: 1.4rem;
-}
-@media screen and (min-width: 960px) {
-  .card__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .card__title {
-    font-size: 2.6rem;
-  }
+  font-size: clamp(2rem, 3vw, 2.4rem);
 }
 .card__link {
   color: inherit;
@@ -1365,7 +1332,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
   background-color: #21201f;
@@ -1403,26 +1369,16 @@ img {
 }
 .block-image__title {
   line-height: 1.2;
-  font-size: 1.4rem;
+  font-size: clamp(2rem, 3vw, 2rem);
   background: #ffffff;
   display: inline-block;
   position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
+  bottom: 0;
+  left: 0;
   margin: 0;
-  padding: 1em 1.2em;
+  padding: 1em 1.4em 0 0;
   z-index: 1;
-  border-radius: 2px;
-}
-@media screen and (min-width: 960px) {
-  .block-image__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .block-image__title {
-    font-size: 2rem;
-  }
+  border-top-right-radius: 2px;
 }
 .block-image__link {
   display: block;
@@ -1475,18 +1431,10 @@ img {
 }
 .block-card__title {
   line-height: 1.2;
-  font-size: 1.4rem;
+  font-size: clamp(2rem, 3vw, 2.4rem);
   margin-bottom: 1.5rem;
-}
-@media screen and (min-width: 960px) {
-  .block-card__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .block-card__title {
-    font-size: 2.6rem;
-  }
+  position: relative;
+  bottom: -0.2em;
 }
 @media screen and (min-width: 1280px) {
   .block-card__title {
@@ -1499,13 +1447,19 @@ img {
 .block-card__text p {
   margin-bottom: 0;
   font-size: 1.4rem;
-  line-height: 1.2;
+  line-height: 1.7;
   font-family: "feijoamedium", sans-serif;
 }
 @media screen and (min-width: 960px) {
   .block-card__text p {
     font-size: 1.4rem;
     line-height: 1.6;
+  }
+}
+@media screen and (max-width: 700px) {
+  .block-card__text p {
+    font-size: 1.2rem;
+    line-height: 1.4;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1544,17 +1498,7 @@ img {
 }
 .block-card--horiz__title {
   line-height: 1.2;
-  font-size: 1.4rem;
-}
-@media screen and (min-width: 960px) {
-  .block-card--horiz__title {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .block-card--horiz__title {
-    font-size: 1.8rem;
-  }
+  font-size: clamp(2rem, 3vw, 1.8rem);
 }
 .block-card--horiz__image {
   display: block;
@@ -1581,11 +1525,10 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   text-align: left;
-  padding: 3rem 0;
+  padding: 6rem 0;
   padding-top: 0;
 }
 .block-content__title p {
@@ -1603,13 +1546,27 @@ img {
 }
 .block-content__content p {
   font-size: 1.4rem;
-  line-height: 1.2;
+  line-height: 1.7;
   font-family: "feijoamedium", sans-serif;
 }
 @media screen and (min-width: 960px) {
   .block-content__content p {
     font-size: 1.4rem;
     line-height: 1.6;
+  }
+}
+
+.grid {
+  grid-gap: 3rem;
+}
+@media screen and (min-width: 960px) {
+  .grid {
+    grid-gap: 6rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .grid--tight {
+    grid-gap: 3rem;
   }
 }
 
@@ -1625,6 +1582,11 @@ img {
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "main main" "main main" "small_1 small_2" "small_3 small_4";
+  }
+}
+@media screen and (min-width: 960px) {
+  .grid-irregular-1 {
+    grid-gap: 6rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -1652,29 +1614,16 @@ img {
   }
 }
 
-.grid {
-  grid-gap: 3rem;
-}
-@media screen and (min-width: 960px) {
-  .grid {
-    grid-gap: 6rem;
-  }
-}
-@media screen and (min-width: 960px) {
-  .grid--tight {
-    grid-gap: 3rem;
-  }
-}
-
 .grid-4x {
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 6rem;
+  grid-gap: 3rem;
   grid-template-areas: "block_1 block_2" "block_3 block_4";
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 960px) {
   .grid-4x {
+    grid-gap: 6rem;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     grid-template-areas: "block_1 block_2 block_3 block_4";
@@ -1699,22 +1648,21 @@ img {
   grid-auto-rows: auto;
   grid-gap: 3rem;
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 960px) {
   .grid-3_1 {
-    display: grid;
-    grid-auto-rows: auto;
+    grid-gap: 6rem;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "block_1 block_2";
   }
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1280px) {
   .grid-3_1 {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     grid-template-areas: "block_1 block_1 block_1 block_2";
   }
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 960px) {
   .grid-3_1__block-1 {
     grid-area: block_1;
   }
@@ -1727,7 +1675,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
   white-space: nowrap;
@@ -1841,7 +1788,7 @@ img {
 .hero-home__intro__intro {
   margin-bottom: 3rem;
   font-size: 1.4rem;
-  line-height: 1.2;
+  line-height: 1.7;
   font-family: "feijoamedium", sans-serif;
 }
 @media screen and (min-width: 960px) {
@@ -2054,7 +2001,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
   margin-bottom: 3rem;
@@ -2236,7 +2182,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
   margin-bottom: 3rem;
@@ -2421,7 +2366,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.2rem;
   margin-bottom: 3rem;
@@ -2560,7 +2504,6 @@ img {
 }
 @media screen and (min-width: 700px) {
   .header__menu__item__arrow {
-    position: absolute;
     z-index: 1;
     display: block;
     width: 20px;
@@ -2583,7 +2526,6 @@ img {
   display: block;
   font-family: "metricsemibold", sans-serif;
   line-height: 1.2;
-  font-weight: 600;
   letter-spacing: 0.05em;
   height: 100%;
   display: flex;
@@ -2594,7 +2536,7 @@ img {
 }
 @media screen and (min-width: 560px) {
   .header__menu__item__link {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 }
 .header__menu__item__link p {
@@ -2621,7 +2563,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   line-height: 1;
@@ -2737,7 +2678,6 @@ img {
   display: block;
   font-family: "metricsemibold", sans-serif;
   line-height: 1.2;
-  font-weight: 600;
   letter-spacing: 0.05em;
   height: 100%;
   display: flex;
@@ -2775,7 +2715,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   line-height: 1;
@@ -2937,7 +2876,6 @@ img {
 }
 .button--small {
   font-size: 1.2rem;
-  font-weight: 600;
   line-height: 1.4;
 }
 @media screen and (min-width: 560px) {
@@ -3269,7 +3207,6 @@ img {
   font-family: "metricsemibold", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
   margin-bottom: 1.5rem;

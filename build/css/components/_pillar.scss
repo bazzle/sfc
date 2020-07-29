@@ -120,7 +120,7 @@
                 padding:0 0 $gap $gap;
             }
             @include break(large) {
-                padding:0;
+                padding:0 0 $gap $gap;
             }
             p{
                 display: none;
