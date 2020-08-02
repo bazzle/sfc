@@ -8,8 +8,8 @@ if ( have_posts() ) :
 <?php
 $bgcolor1 = get_field( "background_colour_1" );
 $bgcolor2 = get_field( "background_colour_2" );
+$image = get_field("hero_image");
 $intro = get_field("page_intro" );
-$image = get_field("page_main_image");
 $asidecontent = get_field("aside_content");
 $asidemain = get_field("aside_main");
 $title = get_the_title();
@@ -29,6 +29,9 @@ $content = wpautop(get_the_content());
             </div>
 
             <div class="article__body">
+                <div class="article__intro">
+                    <?php echo $intro ?>
+                </div>
                 <?php echo $content; ?>
             </div>
             <aside class="article__asidecontent">

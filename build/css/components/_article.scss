@@ -51,6 +51,10 @@
             padding:0 $gap;
         }
     }
+    &__intro{
+        @include text-leadin;
+        @include text-gap--tight;
+    }
     &__asidemain{
         padding:$gap--tight;
         @include break(tablet) {

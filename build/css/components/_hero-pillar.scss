@@ -14,16 +14,14 @@
         grid-template-columns:repeat(3, 1fr);
         grid-template-areas:
         "image image image image"
-        "author title_lockup title_lockup title_lockup"
-        "author intro intro intro";
+        "author title_lockup title_lockup title_lockup";
     }
     @include break(large) {
         grid-template-columns:1fr minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) 1fr;
         grid-template-rows:auto auto 1fr;
         grid-template-areas:
         "space_left . image image image image"
-        "space_left author title_lockup title_lockup title_lockup space_right_nobg"
-        "space_left author intro intro intro space_right_nobg";
+        "space_left author title_lockup title_lockup title_lockup space_right_nobg";
     }
     &__space-left{
         grid-area:space_left;
@@ -59,7 +57,7 @@
             max-height:400px;
         }
         @include break(medium) {
-            max-height:600px;
+            max-height:500px;
         }
         img{
             position:relative;

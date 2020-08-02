@@ -16,7 +16,7 @@
                 <?php endif; ?>
             </a>
             <?php if ($subnav) : ?>
-            <div class="dropdown">
+            <div class="dropdown dropdown--dark component-dark">
                 <div class="dropdown__blocks">
                     <?php if($layoutconfig == '4x') : ?>
                         <?php include (locate_template('includes/section-nav-grid--4x.php')); ?>

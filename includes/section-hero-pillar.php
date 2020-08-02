@@ -28,11 +28,6 @@
             </div>
         </div>
     </div>
-    <div class="hero-pillar__intro">
-        <p>
-            <?php echo $intro ?>
-        </p>
-    </div>
     <div class="hero-pillar__author">
         <?php get_template_part('includes/component','author'); ?>
     </div>

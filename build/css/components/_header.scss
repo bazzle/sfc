@@ -58,7 +58,6 @@
         &__item{
             margin: 0;
             height:$height;
-
             .dropdown{
                 visibility: hidden;
             }
@@ -91,7 +90,7 @@
                     height: 100%;
                     transform: rotate(45deg);
                     transform-origin: center;
-                    background: $color-bg-grey;
+                    background: $color-primary;
                 }
             }
             &__link{

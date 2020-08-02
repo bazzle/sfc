@@ -1,9 +1,9 @@
 <?php
 $bgcolor1 = get_field( "background_colour_1", $term );
 $bgcolor2 = get_field( "background_colour_2", $term );
+$image = get_field("hero_image", $term);
 $title = get_field( "title", $term );
 $intro = get_field("intro", $term );
-$image = get_field("hero_image", $term);
 $overview = get_field("pillar_overview", $term);
 $asidecontent = get_field("aside_content", $term);
 $asidemain = get_field("aside_main", $term);
@@ -24,8 +24,10 @@ if (empty($title)){
             <div class="pillar-head__share">
                 <?php get_template_part('includes/component','share'); ?>
             </div>
-
             <div class="pillar-head__body">
+                <div class="article__intro">
+                    <?php echo $intro ?>
+                </div>
                 <?php echo $overview ?>
             </div>
             <aside class="pillar-head__asidecontent">

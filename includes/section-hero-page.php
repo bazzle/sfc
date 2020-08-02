@@ -34,9 +34,4 @@
             </div>
         </div>
     </div>
-    <div class="hero-pillar__intro">
-        <p>
-            <?php echo $intro ?>
-        </p>
-    </div>
 </div>

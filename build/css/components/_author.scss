@@ -18,23 +18,26 @@
     }
 
     &__profile{
-        position: relative;
+        position: absolute;
         @include align-center;
-        padding:0 0 $gap--tight 0;
+        top:0;
+        transform: translate(0, -50%);
         &__image{
-            width: 100px;
-            height:100px;
+            width: $gap*2;
+            height:$gap*2;
             display: block;
-            border-radius:50%;
-            border: 3px solid $color-primary;
+            border-radius:2px;
+            border: 2px solid $color-primary;
         }
     }
     &__about{
         max-width: none;
-        text-align: center;
+        text-align: left;
         &__description{
             font-family:$font-std--sans;
             line-height: $line-height--tight;
+            font-size: 1.6rem;
+            margin-top: $gap/2;
             margin-bottom: $gap--tight/2;
         }
         &__link{
@@ -44,6 +47,7 @@
         }
     }
     &__socials{
+        display: none;
         text-align:center;
         padding-top: $gap--tight;
         &__divider{

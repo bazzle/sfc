@@ -33,11 +33,6 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
             </div>
         </div>
     </div>
-    <div class="hero-std__intro">
-        <p>
-            <?php echo get_field( "intro" ); ?>
-        </p>
-    </div>
     <div class="hero-std__author">
         <?php get_template_part('includes/component','author'); ?>
     </div>

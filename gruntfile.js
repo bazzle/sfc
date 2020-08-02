@@ -5,7 +5,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     'dart-sass': {
       options: {
-        sourceMap: true
+        sourceMap: true,
+        outputStyle: 'compressed'
       },
       files: {
         src: "build/css/main.scss",
@@ -77,6 +78,6 @@ module.exports = function(grunt) {
     "browserSync", "watch"
   ]);
   grunt.registerTask("build", [
-    "postcss:prod"
+    "dart-sass"
   ]);
 };

@@ -23,17 +23,14 @@
 
         <div class="grid-item grid-space article__space-right"></div>
 
-        <div class="grid-item pillar__section__intro">
-            <p>
-            <?php echo $intro; ?>
-            </p>
-        </div>
-
         <aside class="pillar__section__asidemain">
             <?php echo $aside_main; ?>
         </aside>
 
         <div class="grid-item pillar__section__body">
+            <div class="article__intro">
+                <?php echo $intro ?>
+            </div>
             <div class="pillar__section__content">
             <?php if( $content ) {
                 echo $content;
