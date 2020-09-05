@@ -1,0 +1,115 @@
+.hero-page{
+    background-color:#E0E0E0;
+    position:relative;
+    .grid-space{
+        display:none;
+        @include break(large) {
+            display:block;
+        }
+    }
+    // Grid layout -------
+    @include break(medium) {
+        display: grid;
+        grid-auto-rows:auto;
+        grid-template-columns:repeat(3, 1fr);
+        grid-template-areas:
+        "image image image image"
+        ". title_lockup title_lockup title_lockup"
+        ". intro intro intro";
+    }
+    @include break(large) {
+        grid-template-columns:1fr minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) 1fr;
+        grid-template-rows:auto auto 1fr;
+        grid-template-areas:
+        "space_left . image image image image"
+        "space_left . title_lockup title_lockup title_lockup space_right_nobg"
+        "space_left . intro intro intro space_right_nobg";
+    }
+    &__space-left{
+        grid-area:space_left;
+    }
+    &__space-right{
+        grid-area:space_right;
+    }
+    &__space-right--nobg{
+        grid-area:space_right_nobg;
+        background:$white;
+    }
+    &__space-main{
+        display: none;
+        @include break(tablet) {
+            display: block;
+        }
+        grid-area:space_main;
+    }
+    &__image{
+        grid-area:image;
+    }
+    &__title-lockup{
+        grid-area:title_lockup;
+    }
+    &__intro{
+        grid-area:intro;
+    }
+
+
+    // Styling --------
+
+    &__image{
+        position:relative;
+        height:60vh;
+        max-height:300px;
+        @include break(tablet) {
+            max-height:400px;
+        }
+        @include break(medium) {
+            max-height:600px;
+        }
+        img{
+            position:relative;
+            left:0;
+            top:0;
+            display:block;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+    }
+    &__title-lockup{
+        padding:$gap--tight $gap--tight 0 $gap--tight;
+        background:$white;
+        height:100%;
+        @include align(center, left);
+        @include break(tablet) {
+            padding:$gap;
+            padding-bottom:0;
+        }
+    }
+    &__title{
+        @include title-display;
+        @include text-gap--tight;
+        &--large{
+            @include title-display;
+        }
+    }
+    &__breadcrumb{
+        @include text-gap--tight;
+    }
+    &__meta{
+        @include text-blocky--tiny;
+        @include text-gap;
+    }
+    &__intro{
+        background:$white;
+        padding:0 $gap--tight $gap--tight $gap--tight;
+        @include break(tablet) {
+            padding:0 $gap $gap $gap;
+        }
+        @include break(site-width) {
+            padding:0 0 $gap $gap;
+        }
+        p{
+            @include text-leadin;
+        }
+    }
+}

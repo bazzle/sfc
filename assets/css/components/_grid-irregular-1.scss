@@ -1,0 +1,43 @@
+.grid-irregular-1{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-auto-rows: auto;
+    grid-gap:$gap--tight;
+    @include break(phone) {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns:1fr 1fr;
+        grid-template-areas:
+        "main main"
+        "main main"
+        "small_1 small_2"
+        "small_3 small_4"
+    }
+    @include break(medium) {
+        grid-gap:$gap;
+    }
+    @include break(tablet) {
+        grid-template-columns:minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "main main small_1 small_2"
+        "main main small_3 small_4"
+    }
+    @include break(phone) {
+        &__main{
+            grid-area: main;
+        }
+        &__small-1{
+            grid-area: small_1;
+        }
+        &__small-2{
+            grid-area: small_2;
+        }
+        &__small-3{
+            grid-area: small_3;
+        }
+        &__small-4{
+            grid-area: small_4;
+        }
+    }
+}
