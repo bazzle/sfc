@@ -1,0 +1,29 @@
+.block-image{
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    @include image--square;
+    background: gold;
+    &__title{
+        @include title-block(2rem);
+        background: $white;
+        display: inline-block;
+        position: absolute;
+        bottom:0;
+        left:0;
+        margin: 0;
+        padding:1em 1.4em 0 0;
+        z-index: 1;
+        border-top-right-radius: 2px;
+    }
+    &__link{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

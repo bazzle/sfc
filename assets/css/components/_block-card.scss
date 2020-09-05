@@ -1,0 +1,48 @@
+.block-card{
+    @mixin block-margin-bottom{
+        margin-bottom: $gap--tight/2;
+        @include break(large) {
+            margin-bottom: $gap/2;
+        }
+    }
+    display: block;
+    &__image{
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+        @include block-margin-bottom;
+        @include image--rect;
+        &__link{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+    &__title{
+        @include title-block;
+        @include block-margin-bottom;
+        position: relative;
+        bottom: -.2em;
+    }
+    &__text{
+        p{
+            margin-bottom: 0;
+            @include text-body;
+            @include break-under(tablet) {
+                @include text-tiny;
+            }
+        }
+        @include block-margin-bottom;
+    }
+    &__link{
+        @include link-styled;
+        line-height:1.2;
+    }
+}

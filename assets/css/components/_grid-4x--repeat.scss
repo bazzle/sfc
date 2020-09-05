@@ -1,0 +1,8 @@
+.grid-4x--repeat{
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns:1fr 1fr;
+    @include break(tablet) {
+        grid-template-columns:repeat(4, 1fr);
+    }
+}

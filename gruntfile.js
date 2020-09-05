@@ -9,8 +9,8 @@ module.exports = function(grunt) {
         outputStyle: 'compressed'
       },
       files: {
-        src: "build/css/main.scss",
-        dest: "assets/css/main.css"
+        src: "assets/css/main.scss",
+        dest: "build/css/main.css"
       }
     },
     postcss: {
@@ -21,8 +21,8 @@ module.exports = function(grunt) {
             require("cssnano")(), // minify the result
           ]
         },
-        src: "build/css/main.scss",
-        dest: "assets/css/main.css"
+        src: "assets/css/main.scss",
+        dest: "build/css/main.css"
       }
     },
     svgstore: {
@@ -49,8 +49,8 @@ module.exports = function(grunt) {
             bsFiles: {
                 src : [
                     "**/*.php",
-                    "assets/css/*.css",
-                    "assets/scripts/main.js"
+                    "build/css/*.css",
+                    "build/scripts/main.js"
                 ]
             },
             options: {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: ["build/css/**/*.scss"],
+        files: ["assets/css/**/*.scss"],
         tasks: ["dart-sass"]
       },
       scripts: {

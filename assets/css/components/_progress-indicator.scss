@@ -1,0 +1,30 @@
+.progress-indicator{
+    $height:3px;
+    background-color:$color-feint;
+    left:0;
+    width:100vw;
+    height:$height;
+    z-index:100;
+    position: relative;
+    @include transition(opacity);
+    &.hidden{
+      visibility:hidden;
+      opacity:0;
+    }
+    &.visible{
+      visibility:visible;
+      opacity:1;
+    }
+    /* The progress container (grey background) */
+    &__container {
+        width: 100vw;
+        height: $height;
+    }
+    
+    /* The progress bar (scroll indicator) */
+    &__progress-bar {
+        height: $height;
+        background:$color-accent;
+        width: 0%;
+    }
+}

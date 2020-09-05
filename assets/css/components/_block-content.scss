@@ -1,0 +1,13 @@
+.block-content{
+    display: block;
+    max-width: 800px;
+    &__title{
+        @include title-module;
+    }
+    &__content{
+        p{
+            @include text-body;
+        }
+        margin-bottom: $gap/2;
+    }
+}

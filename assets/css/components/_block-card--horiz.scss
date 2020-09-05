@@ -1,0 +1,28 @@
+.block-card--horiz{
+    margin-bottom: 0;
+    display: grid;
+    grid-gap:$gap--tight;
+    br{
+        display: none;
+    }
+    @mixin block-margin-bottom{
+        margin-bottom: $gap--tight/2;
+        @include break(large) {
+            margin-bottom: $gap/2;
+        }
+    }
+    @include break(medium) {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+    &:first-of-type{
+        border-top: 0;
+        padding-top: 0;
+    }
+    &__title{
+        @include title-block(1.8rem);
+    }
+    &__image{
+        @include image--rect;
+    }
+}
