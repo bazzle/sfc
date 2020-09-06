@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/public_html/wp-content/themes/sfc
+    - export DEPLOYPATH=/public_html/wp-content/themes/sfc/
     - /bin/cp -R * $DEPLOYPATH
