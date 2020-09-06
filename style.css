@@ -1,11 +1,7 @@
 /**
-Theme Name: Street Food City theme
+Theme Name: Street Food City
 Author: Barry Richards
 Version: 1.0
 **/
 
-body{
-    background-color:gold;
-}
-
-@import "./build/css/main.css";
+@import "build/css/main.css";
