@@ -700,3 +700,11 @@ img{
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
+
+
+
+// WORDPRESS SPECIFIC OVERRIDES =====================================================================================
+
+.wp-caption{
+  width:auto!important;
+}
