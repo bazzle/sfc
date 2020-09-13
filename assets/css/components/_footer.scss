@@ -1,21 +1,57 @@
 .footer{
     @include component-dark;
     width: 100%;
-    padding-top: $gap--tight;
-    padding-bottom: $gap--tight;
-    @include break() {
-        padding-top: $gap;
-        padding-bottom: $gap;
-    }
     &__links{
-        @include break() {
-            border-right:4px solid $white;
-        }
         a{
             font-family:$font-blocky;
         }
-        &:last-of-type{
-            border-right:none;
+    }
+    &__logo-lockup{
+        @include align-left-center;
+        @include text-gap--tight;
+        &__logo{
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: $header-height-mobile;
+            max-width: 200px;
+            position: relative;
+            @include break(tablet) {
+                height: 50px;
+                max-height: none;
+            }
+            &__svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__social-links{
+        display: flex;
+        align-items: center;
+        &>*{
+            color:$black;
+        }
+        &__title{
+            @include text-blocky--tiny;
+            padding-right:$gap/4;
+            margin: 0;
+        }
+        &__links{
+            display: flex;
+            &__item{
+                display:block;
+                margin:5px 10px;
+                width:20px;
+                height:20px;
+                svg{
+                    width:20px;
+                    height:20px;
+                }
+                &:last-of-type{
+                    padding-right:0;
+                }
+            }
         }
     }
 }

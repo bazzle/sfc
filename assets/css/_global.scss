@@ -566,7 +566,7 @@ img{
 @mixin component-dark{
   color:$white;
   background-color:$color-primary;
-  h1, h2, h3, h4, h5, ul, ol, p, a{
+  div, span, h1, h2, h3, h4, h5, ul, ol, p, a, svg{
     color:$white;
   }
 }

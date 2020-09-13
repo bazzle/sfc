@@ -71,8 +71,7 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask("svg", [
-    "svgstore","browserSync", "watch"
-
+    "svgstore"
   ]);
   grunt.registerTask("dev", [
     "browserSync", "watch"
