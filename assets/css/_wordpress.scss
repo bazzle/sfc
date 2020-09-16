@@ -1,0 +1,8 @@
+.wp-caption{
+    img{
+        margin-bottom:$gap--tight/2;
+    }
+    .wp-caption-text{
+        @include text-tiny;
+    }
+}

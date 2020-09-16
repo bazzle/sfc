@@ -1,9 +1,6 @@
 <?php
-$bgcolor1 = get_field( "background_colour_1", $term );
-$bgcolor2 = get_field( "background_colour_2", $term );
 $title = get_field( "title", $term );
 $intro = get_field("intro", $term );
-$image = get_field("hero_image", $term);
 $overview = get_field("pillar_overview", $term);
 $asidecontent = get_field("aside_content", $term);
 $asidemain = get_field("aside_main", $term);

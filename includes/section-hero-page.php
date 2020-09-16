@@ -6,7 +6,7 @@
         .hero-pillar__author{
             background:<?php echo $bgcolor2 ?>;
         }
-        .hero-pillar__author__arrow span{
+        .hero-pillar__author-box__arrow span{
             background:<?php echo $bgcolor2 ?>;
         }
     </style>

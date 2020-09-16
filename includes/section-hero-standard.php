@@ -2,7 +2,6 @@
 $heroimage = get_field("hero_image");
 $bgcolor1 = get_field( "background_colour_1" );
 $bgcolor2 = get_field( "background_colour_2" );
-
 if( $bgcolor1 and $bgcolor2 ) : ?>
     <style>
         .hero-std{
@@ -28,12 +27,12 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
             </h1>
             <div class="hero-std__meta">
                 <p>
-                    <span><?php the_author(); ?> – <?php the_date() ?></span>
+                    <?php include( locate_template( 'includes/component-meta-line.php', false, false ) );  ?>
                 </p>
             </div>
         </div>
     </div>
     <div class="hero-std__author">
-        <?php get_template_part('includes/component','author'); ?>
+        <?php include( locate_template( 'includes/component-author.php', false, false ) );  ?>
     </div>
 </div>

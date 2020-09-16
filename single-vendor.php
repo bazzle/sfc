@@ -13,7 +13,7 @@
                         <?php get_template_part('includes/section', 'content') ?>
                     </div>
                     <div class="article__footer">
-                        <?php get_template_part('includes/component','author--horiz'); ?>
+                        <?php get_template_part('includes/component','author-box--horiz'); ?>
                     </div>
                 </div>
                 <aside class="article__sidebar">
