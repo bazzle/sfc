@@ -4,7 +4,7 @@
     grid-auto-rows: auto;
     grid-template-columns:1fr 1fr;
     @include break(tablet) {
-        grid-template-columns:repeat(4, 1fr);
+        grid-template-columns:repeat(3, 1fr);
     }
     @include break(medium) {
         grid-template-columns:1fr;

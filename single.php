@@ -21,9 +21,7 @@ if (empty($title)){
 
     <article class="article">
         <?php include( locate_template('includes/section-hero-standard.php') ) ?>
-
-
-        <div class="panel panel--nospaced article__main">
+        <div class="panel panel--nopad panel--no-inner article__main">
             
             <div class="grid-space article__space-left"></div>
 

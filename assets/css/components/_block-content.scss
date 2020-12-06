@@ -1,6 +1,5 @@
 .block-content{
     display: block;
-    max-width: 800px;
     &__title{
         @include title-module;
     }

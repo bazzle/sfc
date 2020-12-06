@@ -1,7 +1,7 @@
 .cta-line{
     display:grid;
-    grid-template-columns:1fr auto;
-    grid-template-areas: 'line link';
+    grid-template-columns:auto 1fr;
+    grid-template-areas: 'link line';
     grid-gap: $gap/2;
     align-items: center;
     &__line{

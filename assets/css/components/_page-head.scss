@@ -1,4 +1,4 @@
-.pillar-head{
+.page-head{
     @include break(medium) {
         display:grid;
         grid-template-columns:repeat(3, 1fr);

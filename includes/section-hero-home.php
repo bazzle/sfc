@@ -11,7 +11,8 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
 <?php endif ; ?>
 
 
-<div class="panel panel--nospaced hero-home">
+<div class="panel panel--nopad">
+    <div class="panel__inner hero-home">
     <div class="grid-space hero-home__space-left"></div>
     <div class="hero-home__intro">
         <h1 class="hero-home__intro__title">
@@ -27,5 +28,6 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
     </div>
     <div class="hero-home__image">
         <?php echo get_the_post_thumbnail() ?>
+    </div>
     </div>
 </div>

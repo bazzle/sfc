@@ -35,9 +35,6 @@
         p{
             margin-bottom: 0;
             @include text-body;
-            @include break-under(tablet) {
-                @include text-tiny;
-            }
         }
         @include block-margin-bottom;
     }

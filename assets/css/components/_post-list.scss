@@ -1,17 +1,12 @@
 .post-list{
-    &__title{
-        @include title-module;
-    }
     &__item{
-        max-width: 800px;
-        padding-bottom: $gap/2;
-        margin-bottom: 0;
+        max-width: 1000px;
         &:first-of-type{
             border-top: 0;
             padding-top: 0;
         }
         &__title{
-            @include title-block(3rem);
+            @include title;
             @include text-gap--tight;
         }
         &__description{

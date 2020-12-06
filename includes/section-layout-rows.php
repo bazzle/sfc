@@ -3,9 +3,10 @@
         <?php
         $title = get_sub_field('title');
         $bgcolor = get_sub_field('background_color');
+        $classname = get_sub_field('css_class');
         ?>
 
-        <div class="panel" style="background-color:<?php echo $bgcolor; ?>">
+        <div class="panel <?php if ( $classname ) echo $classname; ?>" style="background-color:<?php echo $bgcolor; ?>">
         <div class="panel__inner">
         <?php if ($title) : ?> 
         <div class="panel__title">
@@ -34,6 +35,22 @@
             <?php if (have_rows('3_1')) : ?>
                 <?php while( have_rows('3_1') ): the_row(); ?>
                     <?php get_template_part('includes/section-grid-3_1'); ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+
+        <?php elseif($layout_config === '3_2') : ?>
+
+            <?php if (have_rows('3_2')) : ?>
+                <?php while( have_rows('3_2') ): the_row(); ?>
+                    <?php get_template_part('includes/section-grid-3_2'); ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+
+        <?php elseif($layout_config === '2_3') : ?>
+
+            <?php if (have_rows('2_3')) : ?>
+                <?php while( have_rows('2_3') ): the_row(); ?>
+                    <?php get_template_part('includes/section-grid-2_3'); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
 

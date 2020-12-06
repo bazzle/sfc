@@ -1,10 +1,11 @@
 .pillar-head{
+    padding-bottom:$gap;
     @include break(medium) {
         display:grid;
         grid-template-columns:repeat(3, 1fr);
         grid-template-rows:auto auto 1fr;
         grid-template-areas:
-        "asidemain share share"
+        "share body body"
         "asidemain body body"
         "asidecontent body body";
     }
@@ -30,53 +31,44 @@
     }
     &__body{
         @extend %text-body-format;
-        padding:$gap--tight;
-        @include break(tablet) {
-            padding:$gap;
-        }
+        padding-bottom:$gap;
         @include break(medium) {
-            padding:$gap;
+            padding:$gap--responsive;
+            padding-top:0;
         }
         @include break(large) {
-            padding:0 $gap;
+            padding-top:0;
+            padding-bottom:0;
         }
     }
     &__asidecontent{
-        padding:$gap--tight;
-        @include break(tablet) {
-            padding:$gap;
-        }
+        padding-bottom:$gap;
         @include break(medium) {
-            padding:0 0 $gap $gap;
+            padding-bottom:$gap--responsive;
         }
         @include break(large) {
-            padding:0 $gap 0 0;
+            padding:0 $gap--responsive 0 0;
         }
         p{
             display: none;
         }
     }
     &__asidemain{
-        padding:0 $gap--tight;
         @include break(tablet) {
-            padding:$gap 0 $gap $gap;
-        }
-        @include break(large) {
-            padding:0;
+            padding-bottom:$gap--responsive;
         }
         p{
             display: none;
         }
     }
     &__share{
-        padding:0 $gap--tight;
-        @include break(tablet) {
-            padding:0 $gap;
+        @include break-under(medium) {
+            @include text-gap--tight;
         }
-        @include break(large) {
+        @include break(medium) {
             @include align-right;
             text-align:right;
-            padding:$gap 0;
+            padding:$gap--responsive 0;
         }
     }
 }

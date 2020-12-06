@@ -1,17 +1,24 @@
 .hero-home{
     $color-bg:$color-bg-grey;
     $height:700px;
+    @include break(tablet) {
+        height: $height;
+    }
     .grid-space{
         display:none;
         @include break(large) {
             display:block;
         }
     }
+    // Flex layout for mobile layout -------
+    height: calc(100vh - #{$header-height-mobile});
+    display: flex;
+    flex-direction: column;
     // Grid layout -------
-    @include break(medium) {
+    @include break(tablet) {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns:1fr, 1fr;
+        grid-template-columns:1fr 1fr;
         grid-template-areas:
         "intro image";
     }
@@ -21,7 +28,7 @@
         grid-template-areas:
         "space_left intro intro image image space_right";
     }
-    @include break(medium) {
+    @include break(tablet) {
         &__space-left{
             grid-area:space_left;
         }
@@ -40,7 +47,12 @@
     // Styling --------
 
     &__image{
-        @include image--rect;
+        flex-grow:1;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
     &__intro{
         position:relative;
@@ -48,24 +60,22 @@
         flex-direction: column;
         padding:$gap--tight;
         background: $color-bg;
+        @include break(phone){
+            padding:clamp($gap--tight, 6vw, $gap*2);
+        }
         @include break(tablet) {
-            padding:$gap;
             justify-content: center;
 
-        }
-        @include break(medium) {
-            padding:$gap*2;
         }
         @include break(site-width) {
             border-top-left-radius: 5px;
         }
         &__title{
-            @include title-display(3.8rem);
+            @include title-display(4.5rem);
             margin-bottom:$gap--tight;
         }
         &__intro{
             margin-bottom:$gap--tight;
-            @include text-body;
             @include break(medium){
                 margin-bottom: $gap--tight;
             }
@@ -78,10 +88,7 @@
             }
         }
         &__link{
-            margin-bottom:$gap--tight;
-            @include break(medium) {
-                margin-bottom: 0;
-            }
+            margin-bottom: 0;
             &__link{
                 @include link-styled;
             }

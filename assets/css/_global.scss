@@ -43,7 +43,7 @@ main{
   position:relative;
   margin-top:$header-height-mobile;
   flex-grow: 1;
-  @include break(large) {
+  @include break(tablet) {
       margin-top:$header-height;
   }
 }
@@ -232,7 +232,10 @@ svg path{
   line-height:$line-height--tight;
   color:$color;
   font-family:$font-blocky;
-  font-size:$size;
+  font-size: clamp(2.2rem, 3.2vw, $size );
+  @include break(tablet) {
+    font-size:$size;
+  }
   @include break-under(phone) {
     word-break:break-word;
   }
@@ -277,18 +280,14 @@ svg path{
 @mixin title-block($font-size:2.4rem){
   line-height:1.2;
   font-size: clamp(2rem, 3vw, $font-size );
+  font-family:$font-blocky;
 }
 
 // title module
 @mixin title-module{
   @include text-blocky;
   text-align: left;
-  padding:$gap 0;
-  padding-top: 0;
-  @include break(site-width) {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  margin-bottom:$gap--responsive;
 }
 
 .title-module{
@@ -335,9 +334,9 @@ svg path{
     font-size:2rem;
     color:inherit;
   }
-  p{
+  p, li{
     font-size:1.6rem;
-    line-height:2;
+    line-height:1.8;
   }
   p, ol, ul, .cite, pre{
     max-width:$content-width;
@@ -372,8 +371,8 @@ svg path{
 
 @mixin panel{
   width:100vw;
-  padding-top:$gap;
-  padding-bottom:$gap;
+  padding-top:$gap--responsive--thick;
+  padding-bottom:$gap--responsive--thick;
 }
 
 @mixin panel--nospaced{
@@ -390,7 +389,7 @@ svg path{
   width:100vw;
   max-width:$site-width;
   margin:0 auto;
-  padding: 0 $gap--tight;
+  padding: 0 $gap--responsive;
   @include break(site-width) {
     padding: 0;
   }
@@ -406,6 +405,16 @@ svg path{
 
 .panel{
   @include panel;
+  &--nopad{
+    padding-top:0;
+    padding-bottom:0;
+  }
+  &--no-inner{
+    @include break-under(site-width) {
+      padding-left:$gap--responsive;
+      padding-right:$gap--responsive;
+    }
+  }
   &__inner{
     @include container--margins;
   }
@@ -424,6 +433,16 @@ svg path{
   }
   &__title{
     @include title-module;
+  }
+}
+
+@mixin grid{
+  display:grid;
+  grid-gap:$gap--responsive;
+  &__item{
+    @include break-under(medium) {
+      margin-bottom:$gap--responsive--thick;
+    }
   }
 }
 

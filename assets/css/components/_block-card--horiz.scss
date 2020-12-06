@@ -1,28 +1,22 @@
 .block-card--horiz{
     margin-bottom: 0;
-    display: grid;
-    grid-gap:$gap--tight;
-    br{
-        display: none;
-    }
-    @mixin block-margin-bottom{
-        margin-bottom: $gap--tight/2;
-        @include break(large) {
-            margin-bottom: $gap/2;
-        }
-    }
-    @include break(medium) {
-        align-items: center;
-        grid-template-columns: 1fr 1fr;
-    }
     &:first-of-type{
         border-top: 0;
         padding-top: 0;
     }
-    &__title{
-        @include title-block(1.8rem);
+    @include break(medium) {
+        display: grid;
+        align-items: center;
+        grid-gap:$gap--tight/2;
+        grid-template-columns: 1fr 2fr;
     }
     &__image{
         @include image--rect;
+        @include break-under(medium) {
+            margin-bottom:$gap--tight/2;
+        }
+    }
+    br{
+        display: none;
     }
 }

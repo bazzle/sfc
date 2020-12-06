@@ -1,5 +1,6 @@
 .author-box{
-    padding: $gap;
+    padding: $gap--responsive;
+    padding-top:$gap;
     position:relative;
     display: none;
     height: 100%;

@@ -6,124 +6,96 @@
             display: block;
         }
     }
-    &__space-left{
-        grid-area:spaceleft;
-    }
-    &__space-right{
-        grid-area:spaceright;
-    }
-    
+
     &__section{
-        margin-top:$header-height-scroll;
         &:nth-of-type(odd){
             background-color:$color-bg-beige;
         }
         @include break(medium) {
             display:grid;
             grid-template-columns:repeat(3, 1fr);
-            grid-template-rows:auto auto auto 1fr;
+            grid-template-rows:auto auto 1fr;
             grid-template-areas:
-            ". section_title section_title"
-            ". section_intro section_intro"
-            "section_asidemain section_body section_body"
-            "section_asidecontent section_body section_body";
+            "asidemain title title"
+            "asidemain body body"
+            "asidecontent body body";
         }
         @include break(large) {
             grid-template-columns:1fr minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) minmax(0, 400px) 1fr;
-            grid-template-rows:auto auto 1fr;
+            grid-template-rows:auto 1fr;
             grid-template-areas:
-            "spaceleft . section_title section_title section_title spaceright"
-            "spaceleft . section_intro section_intro section_intro spaceright"
-            "spaceleft section_asidemain section_body section_body section_asidecontent spaceright";
+            "spaceleft asidemain title title title spaceright"
+            "spaceleft asidemain body body asidecontent spaceright";
         }
         &__title{
-            grid-area:section_title;
+            grid-area:title;
         }
-        &__intro{
-            grid-area:section_intro;
+        &__space-left{
+            grid-area:spaceleft;
         }
-        &__asidecontent{
-            grid-area:section_asidecontent;
+        &__space-right{
+            grid-area:spaceright;
+        }
+        &__share{
+            grid-area:share;
         }
         &__body{
-            grid-area:section_body;
+            grid-area:body;
+        }
+        &__asidecontent{
+            grid-area:asidecontent;
         }
         &__asidemain{
-            grid-area:section_asidemain;
+            grid-area:asidemain;
         }
         &__title{
-            padding:$gap--tight;
-            @include break(tablet) {
-                padding:$gap;
-            }
-            &__line{
-                height:4px;
-                width:100%;
-                background-color:$black;
-                @include text-gap;
-            }
-            &__title{
-                @include title-display(3.5rem);
-            }
-        }
-
-
-        &__featured-image{
-            padding:0 $gap--tight $gap--tight $gap--tight;
-            &__image{
-                width: 100%;
-                height: auto;
-            }
-            @include break(tablet) {
-                padding:0 $gap $gap $gap;
-            }
-        }
-        &__intro{
-            padding:0 $gap--tight $gap--tight $gap--tight;
-            @include break(tablet) {
-                padding:0 $gap $gap $gap;
-            }
-            @include break(site-width) {
-                padding:0 0 $gap $gap;
-            }
-            p{
-                @include text-leadin;
+            @include title-display(3.5rem);
+            padding-top:0;
+            @include text-gap--tight;
+            @include break(medium) {
+                padding-left:$gap--responsive;
+                padding-right:$gap--responsive;
             }
         }
         &__body{
             @extend %text-body-format;
-            padding:0 $gap--tight;
-            @include break(tablet) {
-                padding:0 $gap;
-            }
-        }
-        &__asidemain{
-            padding:$gap--tight;
-            display: none;
-            @include break(tablet) {
-                padding:$gap 0 $gap $gap;
-            }
+            padding-bottom:$gap;
             @include break(medium) {
-                display: block;
-                padding:0 0 $gap $gap;
+                padding:$gap--responsive;
+                padding-top:0;
             }
-            p{
-                display: none;
+            @include break(large) {
+                padding-bottom:0;
             }
         }
         &__asidecontent{
-            padding:$gap--tight;
-            @include break(tablet) {
-                padding:$gap;
-            }
+            padding-bottom:$gap;
             @include break(medium) {
-                padding:0 0 $gap $gap;
+                padding-bottom:$gap--responsive;
             }
             @include break(large) {
-                padding:0 0 $gap $gap;
+                padding:0 $gap--responsive 0 0;
             }
             p{
                 display: none;
+            }
+        }
+        &__asidemain{
+            @include break(tablet) {
+                padding-bottom:$gap--responsive;
+            }
+            p{
+                display: none;
+            }
+        }
+        &__share{
+            @include break-under(medium) {
+                @include text-gap--tight;
+            }
+            @include break(medium) {
+                @include align-right;
+                text-align:right;
+                padding:$gap--responsive 0;
             }
         }
     }

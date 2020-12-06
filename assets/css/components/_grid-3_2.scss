@@ -1,0 +1,22 @@
+.grid-3_2{
+    @include grid;
+    grid-template-columns:1fr;
+    grid-auto-rows: auto;
+    @include break(medium) {
+        grid-template-columns:1fr 1fr;
+        grid-template-areas:
+        "block_1 block_2";
+        &__block-1{
+            grid-area: block_1;
+        }
+        &__block-2{
+            grid-area: block_2;
+        }
+    }
+    @include break(large) {
+        grid-template-columns:repeat(5, 1fr);
+        grid-auto-rows: auto;
+        grid-template-areas:
+        "block_1 block_1 block_1 block_2 block_2";
+    }
+}

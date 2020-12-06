@@ -11,7 +11,7 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
 <?php endif ; ?>
 
 
-<div class="hero-pillar panel panel--nospaced">
+<div class="hero-pillar panel panel--nopad panel--no-inner">
     <div class="grid-space hero-pillar__space-left"></div>
     <div class="hero-pillar__image">
         <img src="<?php echo $heroimage['url'] ?>" alt="<?php echo $heroimage['alt'] ?>">

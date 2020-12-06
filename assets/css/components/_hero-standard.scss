@@ -1,6 +1,8 @@
 .hero-std{
-    background-color:#E0E0E0;
     position:relative;
+    @include break-under(large) {
+        background:$white!important;
+    }
     .grid-space{
         display:none;
         @include break(large) {
@@ -32,13 +34,6 @@
     &__space-right--nobg{
         grid-area:space_right_nobg;
         background:$white;
-    }
-    &__space-main{
-        display: none;
-        @include break(tablet) {
-            display: block;
-        }
-        grid-area:space_main;
     }
     &__author{
         grid-area:author;
@@ -77,14 +72,13 @@
         }
     }
     &__title-lockup{
-        padding:$gap--tight $gap--tight 0 $gap--tight;
+        padding-top:$gap--responsive;
+        @include break(medium) {
+            padding:$gap--responsive;
+        }
         background:$white;
         height:100%;
         @include align(center, left);
-        @include break(tablet) {
-            padding:$gap;
-            padding-bottom:0;
-        }
     }
     &__title{
         @include title-display;
@@ -93,11 +87,23 @@
             @include title-display;
         }
     }
-    &__breadcrumb{
-        @include text-gap--tight;
-    }
     &__meta{
         @include text-blocky--tiny;
-        @include text-gap;
+        @include break-under(medium) {
+            @include text-gap--tight;
+        }
+    }
+    &__intro{
+        background:$white;
+        padding:0 $gap--tight $gap--tight $gap--tight;
+        @include break(tablet) {
+            padding:0 $gap $gap $gap;
+        }
+        @include break(site-width) {
+            padding:0 0 $gap $gap;
+        }
+        p{
+            @include text-leadin;
+        }
     }
 }

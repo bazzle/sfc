@@ -10,6 +10,8 @@ $path-fonts: "../assets/fonts/";
 $gap:6rem;
 $gap--tight:3rem;
 $gap--deep:12rem;
+$gap--responsive:clamp(#{$gap/4}, 3vw, #{$gap});
+$gap--responsive--thick:clamp(#{$gap/2}, 6vw, #{$gap*2});
 $site-width:1600px;
 $content-width:1000px;
 $margin-std:1.5rem;
@@ -102,7 +104,7 @@ $font-size-std:1.8rem;
 $font-size-tiny:1.2rem;
 
 // line heights
-$line-height-std:1.7;
+$line-height-std:1.4;
 $line-height--tight:1.2;
 
 // layout margins

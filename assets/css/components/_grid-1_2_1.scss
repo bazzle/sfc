@@ -1,13 +1,11 @@
 .grid-1_2_1{
-    display: grid;
+    @include grid;
     grid-auto-rows: auto;
     grid-template-columns:1fr 1fr;
-    grid-gap:$gap/2;
     grid-template-areas:
     "block_1 block_2"
     "block_3 block_3";
     @include break(medium) {
-        grid-gap:$gap;
         grid-template-columns:1fr 1fr 1fr 1fr;
         grid-auto-rows: auto;
         grid-template-areas:

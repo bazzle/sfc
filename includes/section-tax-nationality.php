@@ -14,7 +14,7 @@ if (empty($title)){
     <article class="pillar article">
         <?php include( locate_template('includes/section-hero-pillar.php') ) ?>
 
-        <div class="panel panel--nospaced pillar-head">
+        <div class="panel panel--nopad panel--no-inner pillar-head">
             
             <div class="grid-space article__space-left"></div>
 
