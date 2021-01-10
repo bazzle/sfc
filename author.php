@@ -26,7 +26,7 @@ $content = wpautop(get_the_content());
         <?php include( locate_template('includes/section-hero-page.php') ) ?>
 
 
-        <div class="panel panel--nospaced article__main">
+        <div class="panel panel--nopad article__main">
             
             <div class="grid-space article__space-left"></div>
 

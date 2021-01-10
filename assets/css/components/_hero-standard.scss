@@ -84,7 +84,7 @@
         @include title-display;
         @include text-gap--tight;
         &--large{
-            @include title-display;
+            @include title-display--large;
         }
     }
     &__meta{

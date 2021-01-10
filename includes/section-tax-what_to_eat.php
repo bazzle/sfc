@@ -32,7 +32,7 @@ if (empty($title)){
                             $link = get_category_link($cat);
                             $imagepath = get_field("featured_image", $cat)['url'];
                             $imagealt = get_field("featured_image", $cat)['alt'];
-                            $text = wpautop(get_field("intro", $cat ));
+                            $text = wpautop(category_description($cat));
                         ?>
 
                         <div class="grid__item grid-4x__item">

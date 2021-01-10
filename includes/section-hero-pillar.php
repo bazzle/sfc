@@ -5,13 +5,13 @@ $bgcolor2 = get_field( "background_colour_2", $term );
 if( $bgcolor1 and $bgcolor2 ) : ?>
     <style>
         .hero-pillar{
-            background: linear-gradient(<?php echo $bgcolor1 ?>, <?php echo $bgcolor2 ?>);
+            background: linear-gradient(to right,<?php echo $bgcolor1 ?>, <?php echo $bgcolor2 ?>);
         }
     </style>
 <?php endif ; ?>
 
 
-<div class="hero-pillar panel panel--nopad panel--no-inner">
+<div class="hero hero-pillar panel panel--nopad panel--no-inner">
     <div class="grid-space hero-pillar__space-left"></div>
     <div class="hero-pillar__image">
         <img src="<?php echo $heroimage['url'] ?>" alt="<?php echo $heroimage['alt'] ?>">

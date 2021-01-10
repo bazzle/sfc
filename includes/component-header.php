@@ -1,10 +1,13 @@
 <header class="header">
-    <div class="panel--nospaced">
+    <div class="panel--nopad">
         <div class="panel__inner header__inner">
             <div class="header__logo-lockup">
                 <a href="<?php echo get_option('home'); ?>" class="header__logo-lockup__logo">
                     <svg class="header__logo-lockup__logo__svg">
-                        <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo3" />
+                        <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo" />
+                    </svg>
+                    <svg>
+                        <use xlink:href="#logo" />
                     </svg>
                 </a>
             </div>

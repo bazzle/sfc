@@ -1,0 +1,29 @@
+.home{
+    main{
+        padding-bottom: $gap;
+    }
+    .whattoeat{
+        padding-top: $space;
+        padding-bottom: $space;
+        &__index{
+            padding-bottom: $space;
+        }
+        &__footer{
+            @include align(center,right);
+        }
+    }
+    .wheretoeat{
+        padding-top: $space;
+        padding-bottom: $space;
+        &__featured{
+            display: flex;
+            align-items: stretch;
+        }
+        &__index{
+            margin-bottom: $space;
+        }
+        &__footer{
+            @include align(center,right);
+        }
+    }
+}

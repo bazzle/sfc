@@ -303,7 +303,7 @@ svg path {
     padding: 0;
   }
 }
-.panel--nospaced {
+.panel--nopad {
   padding: 0;
   width: 100vw;
 }

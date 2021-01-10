@@ -49,7 +49,7 @@
             grid-area:asidemain;
         }
         &__title{
-            @include title-display(3.5rem);
+            @include title-display;
             padding-top:0;
             @include text-gap--tight;
             @include break(medium) {
@@ -58,7 +58,6 @@
             }
         }
         &__body{
-            @extend %text-body-format;
             padding-bottom:$gap;
             @include break(medium) {
                 padding:$gap--responsive;
@@ -66,6 +65,9 @@
             }
             @include break(large) {
                 padding-bottom:0;
+            }
+            &__main{
+                @extend %text-body-format;
             }
         }
         &__asidecontent{

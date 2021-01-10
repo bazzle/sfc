@@ -45,7 +45,6 @@
         grid-area:share;
     }
     &__body{
-        @extend %text-body-format;
         padding-bottom:$gap;
         @include break(medium) {
             padding:$gap--responsive;
@@ -53,6 +52,9 @@
         }
         @include break(large) {
             padding-bottom:0;
+        }
+        &__main{
+            @extend %text-body-format;
         }
     }
     &__intro{
@@ -67,16 +69,10 @@
         @include break(large) {
             padding:0 $gap--responsive 0 0;
         }
-        p{
-            display: none;
-        }
     }
     &__asidemain{
         @include break(tablet) {
             padding-bottom:$gap--responsive;
-        }
-        p{
-            display: none;
         }
     }
     &__share{

@@ -48,6 +48,11 @@
         &__title{
             @include title-block(2.2rem);
             margin-bottom: $gap--tight/2;
+            a{
+                &:hover{
+                    color:$color-accent;
+                }
+            }
         }
         &__text{
             @include break-under(tablet) {

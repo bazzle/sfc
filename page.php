@@ -10,17 +10,16 @@ $bgcolor1 = get_field( "background_colour_1" );
 $bgcolor2 = get_field( "background_colour_2" );
 $image = get_field("hero_image");
 $intro = get_field("page_intro" );
-$asidecontent = get_field("aside_content");
-$asidemain = get_field("aside_main");
+$asidecontent = get_field("page_aside_content");
+$asidemain = get_field("page_aside_main");
 $title = get_the_title();
-$content = wpautop(get_the_content());
 ?>
 
     <article class="article">
         <?php include( locate_template('includes/section-hero-page.php') ) ?>
 
 
-        <div class="panel panel--nospaced article__main">
+        <div class="panel panel--no-inner panel--nopad article__main">
             
             <div class="grid-space article__space-left"></div>
 
@@ -29,18 +28,23 @@ $content = wpautop(get_the_content());
             </div>
 
             <div class="article__body">
-                <div class="article__intro">
+                <p class="article__intro">
                     <?php echo $intro ?>
+                </p>
+                <div class="article__body__main">
+                    <?php wpautop(the_content()); ?>
                 </div>
-                <?php echo $content; ?>
             </div>
-            <aside class="article__asidecontent">
-                <?php echo $asidecontent; ?>
-            </aside>
-            <aside class="article__asidemain">
-                <?php echo $asidemain; ?>
-            </aside>
-
+            <?php if ($asidecontent) : ?>
+                <aside class="article__asidecontent">
+                    <?php echo $asidecontent; ?>
+                </aside>
+            <?php endif; ?>
+            <?php if ($asidemain) : ?>
+                <aside class="article__asidemain">
+                    <?php echo $asidemain; ?>
+                </aside>
+            <?php endif; ?>
             <div class="grid-space article__space-right"></div>
 
         </div>

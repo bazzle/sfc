@@ -1,0 +1,14 @@
+.page-info{
+    background-color:$off-white;
+    &__title{
+        @include title-display;
+        @include text-gap--tight;
+    }
+    &__body{
+        padding-bottom:$gap;
+        @extend %text-body-format;
+        @include break(large) {
+            padding-bottom:0;
+        }
+    }
+}

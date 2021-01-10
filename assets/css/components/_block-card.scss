@@ -1,9 +1,6 @@
 .block-card{
     @mixin block-margin-bottom{
         margin-bottom: $gap--tight/2;
-        @include break(large) {
-            margin-bottom: $gap/2;
-        }
     }
     display: block;
     &__image{
@@ -13,6 +10,7 @@
         position: relative;
         @include block-margin-bottom;
         @include image--rect;
+        @extend %image-zoom;
         &__link{
             display: block;
             position: absolute;

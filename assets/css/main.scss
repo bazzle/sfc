@@ -1,3 +1,6 @@
+// external
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+// globals
 @import '_reset';
 @import '_project-settings';
 @import '_mixins-variables';
@@ -12,6 +15,7 @@
 @import 'components/pillar-head';
 @import 'components/page-head';
 @import 'components/article';
+@import 'components/page-info';
 @import 'components/ad';
 @import 'components/_card';
 @import 'components/_cta-line';
@@ -40,11 +44,9 @@
 @import 'components/_footer';
 @import 'components/_progress-indicator';
 // project specific components
-@import 'components/_home-wheretoeat';
-@import 'components/_home-whattoeat';
 @import 'components/_divider-down';
 @import 'components/_author';
 // pages
-@import 'pages/_home';
+@import '_pages';
 // CMS specific
 @import '_wordpress';

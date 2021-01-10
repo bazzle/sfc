@@ -30,7 +30,7 @@
                         <div class="footer__logo-lockup">
                             <a href="<?php echo get_option('home'); ?>" class="footer__logo-lockup__logo">
                                 <svg class="footer__logo-lockup__logo__svg">
-                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo3-reverse" />
+                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo" />
                                 </svg>
                             </a>
                         </div>

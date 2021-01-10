@@ -11,7 +11,7 @@
         grid-template-columns: 1fr 2fr;
     }
     &__image{
-        @include image--rect;
+        @extend %image-zoom;
         @include break-under(medium) {
             margin-bottom:$gap--tight/2;
         }

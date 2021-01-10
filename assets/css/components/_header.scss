@@ -33,6 +33,9 @@
             max-height: $header-height-mobile;
             max-width: 200px;
             position: relative;
+            &:hover{
+                color:$color-accent;
+            }
             @include break(tablet) {
                 max-width: 300px;
                 height: 50px;

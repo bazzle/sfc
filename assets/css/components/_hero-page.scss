@@ -1,6 +1,6 @@
 .hero-page{
     position:relative;
-    @include break-under(large) {
+    @include break-under(medium) {
         background:$white!important;
     }
     .grid-space{

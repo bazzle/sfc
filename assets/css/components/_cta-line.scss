@@ -14,11 +14,35 @@
     &__link{
         grid-area: link;
         @include text-blocky--tiny;
-        background-color: $color-primary;
+        background-color: $off-black;
         display: inline-block;
         color: $white;
         padding: .7em 1em;
         border-radius: 2px;
+        position: relative;
+        cursor:pointer;
+        position:relative;
+        span{
+          position:relative;
+          z-index:2;
+        }
+        &:after {
+            width:100%;
+            height:0%;
+            background:$black;
+            display:block;
+            content:'';
+            position:absolute;
+            bottom:0;
+            left:0;
+            transition: all 0.2s $fast-to-slow 0s;
+        }
+        &:hover{
+            color:$color-accent;
+            &:after{
+                height:100%;
+            }
+        }
     }
     .component-dark &{
         &__line{
@@ -26,7 +50,10 @@
         }
         &__link{
             background-color: $white;
-            color: $color-primary;
+            color: $color-primary!important;
+            &:after{
+                background:$color-accent;
+            }
         }
     }
 }

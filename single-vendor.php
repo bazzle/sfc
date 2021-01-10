@@ -10,8 +10,11 @@
                         <?php echo get_field( "intro" ); ?>
                     </p>
                     <div class="article__body">
-                        <?php get_template_part('includes/section', 'content') ?>
+                        <div class="article__body__main">
+                            <?php wpautop(the_content()); ?>
+                        </div>
                     </div>
+                    
                     <div class="article__footer">
                         <?php get_template_part('includes/component','author-box--horiz'); ?>
                     </div>

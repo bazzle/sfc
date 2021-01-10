@@ -28,9 +28,15 @@ if (empty($title)){
             <div class="article__share">
                 <?php get_template_part('includes/component','share'); ?>
             </div>
-
             <div class="article__body">
-                <?php echo $content; ?>
+                <?php if ($intro) : ?>
+                    <p class="article__intro">
+                        <?php echo $intro ?>
+                    </p>
+                <?php endif; ?>
+                <div class="article__body__main">
+                    <?php wpautop(the_content()); ?>
+                </div>
             </div>
             <aside class="article__asidecontent">
                 <?php echo $asidecontent; ?>

@@ -27,7 +27,8 @@ module.exports = function(grunt) {
     },
     svgstore: {
       options: {
-        includedemo: false
+        includedemo: true,
+        cleanup:true
       },
       files: {
         src: 'assets/svg/*.svg',
@@ -71,7 +72,7 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask("svg", [
-    "svgstore"
+    "svgstore", "browserSync", "watch"
   ]);
   grunt.registerTask("dev", [
     "browserSync", "watch"

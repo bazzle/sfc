@@ -4,20 +4,53 @@
     height: 0;
     padding-bottom: 100%;
     position: relative;
+    overflow: hidden;
     @include image--square;
-    background: gold;
+    @extend %image-zoom;
+    &:hover{
+        .block-image__title{
+            a{
+                &:after{
+                    right:-2.9em;
+                }
+            }
+        }
+    }
     &__title{
-        font-size:1.5vw;
-        font-size: clamp(1.4rem, 1.2vw, 1.8rem );
-        background: $white;
-        display: inline-block;
         position: absolute;
-        bottom:0;
-        left:0;
-        margin: 1em;
-        padding:.8em 1.2em;
+        @include position-center;
         z-index: 1;
-        border-top-right-radius: 2px;
+        a{
+            display: block;
+            border-radius: .1em;
+            text-align: center;
+            transition: all 0.2s $fast-to-slow 0s;
+            font-size: clamp(1.4rem, 1.2vw, 1.8rem );
+            span{
+                padding-left:.3em;
+                padding-right:.3em;
+                padding:.6em 1em;
+                display: block;
+                background: $white;
+                border-radius:$border-radius;
+            }
+            &:after {
+                width: 3em;
+                height: 100%;
+                position: absolute;
+                z-index:-1;
+                background-color:$color-accent;
+                color:$white;
+                right:0;
+                top:0;
+                content: "\f0a4";
+                font-family: FontAwesome;
+                font-size: 15px;
+                @include align-center;
+                transition: all 0.2s linear 0s;
+                border-radius:$border-radius;
+            }
+        }
     }
     &__link{
         display: block;

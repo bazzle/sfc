@@ -1,7 +1,7 @@
 <?php if( $bgcolor1 and $bgcolor2 ) : ?>
     <style>
         .hero-pillar{
-            background: linear-gradient(<?php echo $bgcolor1 ?>, <?php echo $bgcolor2 ?>);
+            background: linear-gradient(to right,<?php echo $bgcolor1 ?>, <?php echo $bgcolor2 ?>);
         }
         .hero-pillar__author{
             background:<?php echo $bgcolor2 ?>;
@@ -13,7 +13,7 @@
 <?php endif ; ?>
 
 
-<div class="hero-pillar panel panel--nopad panel--no-inner">
+<div class="hero hero-pillar panel panel--nopad panel--no-inner">
     <div class="grid-space hero-pillar__space-left"></div>
     <div class="hero-pillar__image">
         <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">

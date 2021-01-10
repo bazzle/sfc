@@ -30,7 +30,6 @@
         grid-area:asidemain;
     }
     &__body{
-        @extend %text-body-format;
         padding-bottom:$gap;
         @include break(medium) {
             padding:$gap--responsive;
