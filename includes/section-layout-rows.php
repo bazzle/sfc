@@ -1,20 +1,19 @@
 <?php if( have_rows('block_grid') ): ?>
     <?php while( have_rows('block_grid') ): the_row(); ?>
         <?php
-        $title = get_sub_field('title');
         $bgcolor = get_sub_field('background_color');
         $classname = get_sub_field('css_class');
         $hidden = get_sub_field('hidden');
+        $paneltitle = get_sub_field('title');
+        $titleLevel = get_sub_field('title_level');
         ?>
 
         <?php if(!$hidden) :  ?>
 
         <div class="panel <?php if ( $classname ) echo $classname; ?>" style="background-color:<?php echo $bgcolor; ?>">
             <div class="panel__inner">
-            <?php if ($title) : ?> 
-            <div class="panel__title">
-                <h3><?php echo $title ?></h3>
-            </div>
+            <?php if ($paneltitle) : ?>
+                <?php include(locate_template('includes/component-panel-title.php')) ?>
             <?php endif; ?>
             <?php $layout_config = get_sub_field('Layout_configuration'); ?>
             

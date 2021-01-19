@@ -22,26 +22,22 @@ if (empty($title)){
     <?php if ( have_posts() ) : ?>
     <div class="panel">
         <div class="panel__inner">
-
-            <?php $sectiontitle = 'Korean street food articles' ?>
-            <?php include(locate_template('includes/component-section-header.php')); ?>
+            <?php $paneltitle = 'Korean street food articles' ?>
+            <?php include(locate_template('includes/component-panel-title.php')); ?>
             <div class="panel__inner--margins">
                     <div class="grid grid-4x grid-4x--repeat">
 
-                        <?php while ( have_posts() ) : the_post(); ?>
-
-                            <?php
+                        <?php while ( have_posts() ) : the_post();
                             $id = get_the_ID();
-                            $title = get_the_title();
+                            $blocktitle = get_the_title();
                             $imagepath = get_the_post_thumbnail_url();
                             $imagealt = get_the_title();
-                            $text = wpautop(get_sub_field('block_text'));
+                            $text = get_field('intro');
                             $link = get_the_permalink();
-                            ?>
+                        ?>
 
                             <div class="grid__item grid-4x__item">
-                                <?php $block = 'block_1_feature_block' ?>
-                                <?php include( locate_template( 'includes/component-block--card.php', false, false ) ); ?>
+                                <?php include( locate_template( 'includes/component-block--card.php' ) ); ?>
                             </div>
 
                         <?php endwhile; // end of the loop. ?>

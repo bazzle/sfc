@@ -8,7 +8,7 @@
     height: auto;
     top: 80px;
     left: 0;
-    max-width: $site-width;
+    max-width: $sitewidth;
     &__blocks{
         margin-bottom: $gap/2;
     }
@@ -58,7 +58,6 @@
             @include break-under(tablet) {
                 @include text-tiny;
             }
-            @include text-body;
         }
         &__link{
             @include link-styled;

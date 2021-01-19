@@ -1,5 +1,11 @@
+<?php
+$heading_level = get_sub_field('block_title_level');
+if (empty($heading_level)){
+    $heading_level = 3;
+};
+?>
 <div class="block-content">
-    <h2 class="block-content__title"><?php echo $moduletitle ?></h2>
+    <h<?php echo $heading_level ?> class="block-content__title"><?php echo $blocktitle ?></h<?php echo $heading_level ?>>
     <div class="block-content__content">
         <?php echo $text ?>
     </div>

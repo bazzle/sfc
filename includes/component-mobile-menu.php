@@ -1,13 +1,15 @@
-<nav aria-hidden='true' class="mobile-menu close">
-    <div class="panel">
-        <div class="panel__container">
-            <div class="mobile-menu__inner nav">
-                <div class="mobile-menu__group">
-                    <nav class="header__menu nav">
-                        Mobile menu here
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+<?php
+    $args = array(
+        'menu'=> 'Mobile menu',
+        'menu_class'=> 'mobile-menu__list',
+        'container'=> false
+    );
+?>
+
+<div class="mobile-menu close">
+
+    <nav class="mobile-menu__inner">
+        <?php wp_nav_menu( $args ) ?>
+    </nav>
+
+</div>

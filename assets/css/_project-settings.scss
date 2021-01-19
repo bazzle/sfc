@@ -13,7 +13,7 @@ $gap--deep:12rem;
 $gap--responsive--tight:clamp(#{$gap/4}, 1.5vw, #{$gap/2});
 $gap--responsive:clamp(#{$gap/4}, 3vw, #{$gap});
 $gap--responsive--thick:clamp(#{$gap/2}, 6vw, #{$gap*2});
-$site-width:1600px;
+$sitewidth:1600px;
 $content-width:1000px;
 $margin-std:1.5rem;
 
@@ -97,10 +97,9 @@ $color-selection:$color-accent;
 
 $font-display:'metricbold', sans-serif;
 $font-blocky:'metricsemibold', sans-serif;
-$font-std:'feijoamedium', sans-serif;
-$font-std--sans:'metricregular', sans-serif;
-$font-bold:'metricmedium', sans-serif;
+$font-std:'metricregular', sans-serif;
 $font-light:'metriclight', sans-serif;
+$font-bold:'metricmedium', sans-serif;
 
 // font weights
 $weight-std-std:400;
@@ -115,9 +114,6 @@ $font-size-tiny:1.2rem;
 // line heights
 $line-height-std:1.4;
 $line-height--tight:1.2;
-
-// layout margins
-$space:4rem;
 
 $s1:8rem;
 $s2:6rem;

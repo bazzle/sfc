@@ -41,7 +41,6 @@ add_action('widgets_init','my_sidebars');
 
 register_nav_menus(
     array(
-        'main-menu' => 'Main menu location',
         'mobile-menu' => 'Mobile menu location',
         'footer-menu-1' => 'Footer menu 1',
         'footer-menu-2' => 'Footer menu 2'

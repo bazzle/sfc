@@ -1,7 +1,6 @@
 <?php if( have_rows('nav_item','option') ): ?>
     <ul class="header__menu nav" id="menu-main">
-        <?php while( have_rows('nav_item','option') ): the_row(); ?>
-        <?php
+        <?php while( have_rows('nav_item','option') ): the_row();
         $name = get_sub_field('nav_name');
         $link = get_sub_field('nav_link');
         $layoutconfig = get_sub_field('layout_configuration');

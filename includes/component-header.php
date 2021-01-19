@@ -4,14 +4,12 @@
             <div class="header__logo-lockup">
                 <a href="<?php echo get_option('home'); ?>" class="header__logo-lockup__logo">
                     <svg class="header__logo-lockup__logo__svg">
+                        <title>Street Food City Logo</title>
                         <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo" />
-                    </svg>
-                    <svg>
-                        <use xlink:href="#logo" />
                     </svg>
                 </a>
             </div>
-            <nav class="header__menu">
+            <nav role="navigation" aria-label="Main" class="header__menu">
                 <?php get_template_part('includes/component','nav-menu'); ?>
             </nav>
             <button type=“button” class="header__trigger trigger-menu">

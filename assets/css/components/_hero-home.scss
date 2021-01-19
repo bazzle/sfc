@@ -46,6 +46,9 @@
 
     &__image{
         flex-grow:1;
+        @include break-under(tablet) {
+            margin-bottom: 1em;
+        }
         img{
             width: 100%;
             height: 100%;
@@ -54,7 +57,7 @@
     }
     &__intro{
         @include component-dark;
-        background: $color-bg;
+        background-image: $color-bg;
         position:relative;
         display: flex;
         flex-direction: column;
@@ -67,7 +70,7 @@
             justify-content: center;
 
         }
-        @include break(site-width) {
+        @include break(sitewidth) {
             border-top-left-radius: 5px;
         }
         &__title{
@@ -88,6 +91,9 @@
             svg{
                 fill:currentColor;
                 width: 40px;
+            }
+            @include break-under(tablet) {
+                display: none;
             }
         }
         &__link{

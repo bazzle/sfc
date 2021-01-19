@@ -9,9 +9,7 @@
                             <?php while( have_rows('irregular_1') ): the_row(); ?>
 
                                 <div class="panel">
-                                    <div class="panel__title">
-                                        <h3><?php echo get_sub_field('title'); ?></h3>
-                                    </div>
+                                    <?php include( locate_template( 'includes/component-panel-title.php' ) );  ?>
                                     <div class="panel__inner--margins">
                                         <?php if (have_rows('blocks')) : ?>
                                             <?php while( have_rows('blocks') ): the_row() ; ?>

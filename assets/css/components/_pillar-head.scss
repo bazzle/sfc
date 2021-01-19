@@ -30,14 +30,9 @@
         grid-area:asidemain;
     }
     &__body{
-        padding-bottom:$gap;
         @include break(medium) {
             padding:$gap--responsive;
             padding-top:0;
-        }
-        @include break(large) {
-            padding-top:0;
-            padding-bottom:0;
         }
     }
     &__asidecontent{

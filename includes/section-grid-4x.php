@@ -1,6 +1,3 @@
-
-<?php $sectiontitle = get_sub_field('title'); ?>
-<?php include(locate_template('includes/component-section-header.php')); ?>
 <div class="panel__inner--margins">
     <?php if (have_rows('blocks')) : ?>
         <?php while( have_rows('blocks') ): the_row() ; ?>

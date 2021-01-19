@@ -99,7 +99,7 @@
         @include break(tablet) {
             padding:0 $gap $gap $gap;
         }
-        @include break(site-width) {
+        @include break(sitewidth) {
             padding:0 0 $gap $gap;
         }
         p{

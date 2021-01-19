@@ -65,7 +65,7 @@
             justify-content: center;
 
         }
-        @include break(site-width) {
+        @include break(sitewidth) {
             border-top-left-radius: 5px;
         }
         &__title{

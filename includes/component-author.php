@@ -25,9 +25,9 @@
 ?>
 
 <div class="author-box <?php echo $authorbg ?>">
-    <div class="author-box__profile">
+    <a href="<?php echo $authorpagelink ?>" class="author-box__profile">
         <img class="author-box__profile__image" src="<?php echo $authorimage ?>" alt="" class="author-box__profile__image">
-    </div>
+    </a>
     <div class="author-box__about">
         <p class="author-box__about__description">
             <?php echo $authorbio ?>

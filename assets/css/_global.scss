@@ -6,7 +6,7 @@ html {
 
 // body
 body {
-  font-family: $font-std--sans;
+  font-family: $font-std;
   font-size:$font-size-mobile;
   @include break(phone) {
     font-size:$font-size-std;
@@ -18,7 +18,7 @@ body {
 
 // SOME RESETS ===============================================
 
-a{
+a, button{
   cursor:pointer;
 }
 
@@ -26,16 +26,57 @@ img{
   border-radius: $border-radius;
 }
 
+input, button, textarea{
+  border:0;
+  border-radius:0;
+}
+
+// ACCESSIBILITY ===============================================
+
+.skip-link{
+  z-index: 1000;
+  position: absolute;
+  top:$gap/2;
+  left:$gap/2;
+  padding: .5em;
+  background-color:$off-white;
+  font-size: .7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  
+  &:hover{
+    color:$black;
+  }
+  &:focus{
+    border: 1px solid blue;
+  }
+}
+
+// screen reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 // MAIN LAYOUT =============================================================
 
 html, body{
   width: 100%;
-  height: 100%;
 }
 
 body{
   display: flex;
   flex-direction: column;
+  &.locked{
+    height: 100vh;
+    overflow-y:hidden;
+  }
 }
 
 .header{
@@ -201,7 +242,7 @@ svg path{
 @mixin text-std{
   font-size: 1.2rem;
   line-height: 1.2rem;
-  font-family:$font-std--sans;
+  font-family:$font-std;
   @include break(medium) {
     font-size:1.8rem;
     line-height:1.2;
@@ -223,6 +264,7 @@ svg path{
 @mixin text-tiny{
   font-size:$font-size-tiny;
   line-height:1.4;
+  font-family:$font-std;
 }
 
 @mixin text-mobile{
@@ -275,7 +317,7 @@ svg path{
 }
 
 // title display large
-@mixin title-display--large($size:5vw){
+@mixin title-display--large($size:3.5vw){
   line-height:1.1;
   font-family:$font-display;
   font-size:clamp(3.5rem, $size, 8rem);
@@ -302,11 +344,10 @@ svg path{
 }
 
 // leadin/intro text
-@mixin text-leadin($font-size:3rem){
-  -webkit-font-smoothing:antialiased;
-  font-family:$font-light;
+@mixin text-leadin($font-size:2.5rem){
+  font-family:$font-bold;
   font-size:2rem;
-  line-height:1.3;
+  line-height:1.2;
   @include break(tablet) {
     font-size:$font-size;
   }
@@ -314,7 +355,7 @@ svg path{
 
 // text body
 %text-body-format{
-  font-family:$font-std;
+  font-family:$font-light;
   line-height:$line-height-std;
   h1, h2, h3, h4, h5, img, p, ul, ol{
     @include text-gap--tight;
@@ -341,8 +382,7 @@ svg path{
     color:inherit;
   }
   p, li{
-    font-size:1.4rem;
-    line-height:2;
+    font-size:2rem;
   }
   p, ol, ul, .cite, pre{
     max-width:$content-width;
@@ -356,11 +396,15 @@ svg path{
     position:relative;
     padding-left:1em;
     &:before{
-      content:'\25A0';
-      color:$color-secondary;
-      position:absolute;
-      left:0;
-      top:0;
+      content: "■";
+      color: #21c4d3;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 12px;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
   }
   & > *:last-child{
@@ -373,31 +417,138 @@ svg path{
   }
 }
 
+// Buttons ======================================================================
+
+
+// Turn button into inline link
+@mixin button-inline{
+  border-radius: 0;
+  border:none;
+  display:inline;
+  padding:0;
+  font-family:inherit;
+  cursor:pointer;
+  color:$link-colors;
+}
+
+@mixin btn-state($color, $textcolor){
+    @include transition(background-color);
+    &:hover {
+        color:$textcolor;
+        background-color: darken($color, 5);
+    }
+    &:active {
+        color:$textcolor;
+        background-color: darken($color, 5);
+    }
+};
+
+@mixin button{
+    cursor:pointer;
+    padding:1em;
+    display: inline-block;
+    width:auto;
+    text-align:center;
+    position:relative;
+    text-decoration:none!important;
+    background-color:$color-button;
+    color:$white;
+    border-radius: 2px;
+    @include btn-state($color-button, $white);
+    @include break(phone){
+        padding:1em 1.3em;
+    }
+}
+@mixin button--anim{
+  @include text-blocky--tiny;
+  background-color: $off-black;
+  display: inline-block;
+  color: $white;
+  border-radius: 2px;
+  position: relative;
+  cursor:pointer;
+  position:relative;
+  span{
+    position:relative;
+    z-index:2;
+  }
+  &:after {
+      width:100%;
+      height:0%;
+      background:$black;
+      display:block;
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      transition: all 0.2s $fast-to-slow 0s;
+  }
+  &:hover{
+      color:$color-accent;
+      &:after{
+          height:100%;
+      }
+  }
+}
+
+.button{
+    @include button;
+    &--alt{
+      background-color:$white;
+      color:$color-button;
+      @include btn-state($white, $color-secondary);
+    }
+    &--outline{
+      background-color:transparent;
+      color:$color-button;
+      border:$color-button 1px solid;
+      @include btn-state($color-button, $white);
+    }
+    // for buttons with lots of things inside that need to be aligned
+    &__inner{
+      width:100%;
+      height:100%;
+      @include align-center;
+    }
+    &--small{
+      @include text-tiny;
+      @include break(phone){
+          padding:.8em 1em;
+      }
+    }
+}
+
+
+
 // LAYOUT ====================================================================================================
 
 @mixin panel{
   position: relative;
   width:100vw;
-  padding-top:$gap--responsive--thick;
-  padding-bottom:$gap--responsive--thick;
+  padding-top:$gap;
+  padding-bottom:$gap;
 }
 
 @mixin panel--nopad{
   width:100vw;
 }
+@mixin panel--nopad-top{
+  width:100vw;
+  padding-bottom:$gap--responsive--thick;
+}
 
 @mixin container{
   width:100vw;
-  max-width:$site-width;
+  max-width:$sitewidth;
   margin:0 auto;
 }
 
 @mixin container--margins{
   width:100vw;
-  max-width:$site-width;
+  max-width:$sitewidth;
   margin:0 auto;
   padding: 0 $gap--responsive;
-  @include break(site-width) {
+  @include break(sitewidth) {
     padding: 0;
   }
 }
@@ -429,7 +580,7 @@ svg path{
     padding-top:0;
   }
   &--no-inner{
-    @include break-under(site-width) {
+    @include break-under(sitewidth) {
       padding-left:$gap--responsive;
       padding-right:$gap--responsive;
     }
@@ -549,15 +700,6 @@ p, ul, ol{
   list-style:none;
 }
 
-// lists
-ul{
-  li{
-    @include break-under(tablet) {
-      margin-bottom:1em;
-    }
-  }
-}
-
 // anchor
 a{
   text-decoration: none;
@@ -570,7 +712,7 @@ a{
   color:$color;
   border-bottom:2px solid $border-color;
   display:inline;
-  font-family:$font-std--sans;
+  font-family:$font-std;
   &:hover{
     color:$hover-color;
   }
@@ -597,18 +739,6 @@ a{
 // text highlight
 ::selection {
   background:$color-accent;
-}
-
-// screen reader only
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
 }
 
 // text no break
@@ -652,7 +782,7 @@ img{
 
 .component-title{
   @include text-blocky;
-  padding-bottom:$space;
+  padding-bottom:$gap;
 }
 
 // BUTTONS =====================================================================================
@@ -760,6 +890,40 @@ img{
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
+
+
+
+// FORMS =======================================================================================================
+
+form{
+  input, button, textarea{
+    border:1px solid $color-dark-gray;
+  }
+  label{
+    @include text-tiny;
+  }
+  input, textarea{
+    padding: .8em;
+    padding-top: .6em;
+    border-radius: 0;
+    font-size: $font-size-std;
+  }
+  input{
+    @include break-under(phone) {
+      border-bottom: 0;
+      text-align: center;
+    }
+  }
+  input[type='submit']{
+    @include button;
+  }
+}
+
+
+
+
+
+
 
 
 

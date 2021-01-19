@@ -1,46 +1,47 @@
 .footer{
     @include component-dark;
     width: 100%;
-    &__links{
-        a{
-            //font-family:$font-blocky;
+    &__menu{
+        @include break-under(phone) {
+            @include align-center;
+            text-align: center;
         }
     }
-    &__logo-lockup{
-        @include align-left-center;
-        @include text-gap--tight;
-        &__logo{
-            display: block;
-            width: 100%;
-            height: 100%;
-            max-height: $header-height-mobile;
-            max-width: 200px;
-            position: relative;
-            color:$white;
-            @include break(tablet) {
-                height: 50px;
-                max-height: none;
-            }
-            &__svg{
-                width: 100%;
-                height: 100%;
-                fill:white!important;
-            }
+    &__logo{
+        display: block;
+        width: 100%;
+        @include align-center;
+        margin-top: $gap/2;
+        margin-bottom: $gap/2;
+        @include break(medium) {
+            margin-top: 0;
+            @include align-left-center;
+        }
+        &__svg{
+            height: 35px;
+            width: 200px;
         }
     }
     &__social-links{
-        display: flex;
-        align-items: center;
+        @include break(medium) {
+            @include align-left-center;
+        }
         &>*{
             color:$black;
         }
         &__title{
+            text-align: center;
             @include text-blocky--tiny;
-            padding-right:$gap/4;
             margin: 0;
+            padding-bottom: .5em;
+            @include break(medium) {
+                text-align: left;
+                padding-right:$gap/4;
+                padding-bottom: 0;
+            }
         }
         &__links{
-            display: flex;
+            @include align-center;
             &__item{
                 display:block;
                 margin:5px 10px;

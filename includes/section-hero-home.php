@@ -1,8 +1,8 @@
 <?php 
 $bgcolor1 = get_field( "background_colour_1" );
 $bgcolor2 = get_field( "background_colour_2" );
-$headline = get_field( "headline" );
-$heropara = get_field( "hero_paragraph" );
+$headline = esc_html(get_field( "headline" ));
+$heropara = esc_html(get_field( "hero_paragraph" ));
 $video = get_field("hero_video");
 
 
@@ -36,12 +36,8 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
                         <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#icon-food-taco" />
                     </svg>
                 </div>
-                <h1 class="hero-home__intro__title">
-                    <?php echo $headline ?>
-                </h1>
-                <p class="hero-home__intro__intro">
-                <?php echo $heropara ?>
-                </p>
+                <h1 class="hero-home__intro__title"><?php echo $headline ?></h1>
+                <p class="hero-home__intro__intro"><?php echo $heropara ?></p>
                 <div class="hero-home__intro__icons">
                     <svg>
                         <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#icon-food-noodles" />

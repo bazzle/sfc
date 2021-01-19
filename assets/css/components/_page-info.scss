@@ -1,5 +1,7 @@
 .page-info{
-    background-color:$off-white;
+    &>div:first-of-type{
+        background-color:$off-white;
+    }
     &__title{
         @include title-display;
         @include text-gap--tight;

@@ -12,10 +12,10 @@ $intro = get_field("intro" );
 $image = get_field("main_image");
 $asidecontent = get_field("aside_content");
 $asidemain = get_field("aside_main");
-$title = get_field("title");
+$pagetitle = get_field("title");
 $content = wpautop( get_the_content() );
-if (empty($title)){
-    $title = get_the_title();
+if (empty($pagetitle)){
+    $pagetitle = get_the_title();
 }
 ?>
 
