@@ -3,8 +3,10 @@ $bgcolor1 = get_field( "background_colour_1" );
 $bgcolor2 = get_field( "background_colour_2" );
 $headline = esc_html(get_field( "headline" ));
 $heropara = esc_html(get_field( "hero_paragraph" ));
-$video = get_field("hero_video");
-
+$heromedia = get_field("hero_media")['url'];
+$imageorvideo = get_field("hero_media_type");
+$heroimage = get_field("hero_image");
+$herovideo = get_field("hero_video");
 
 if( $bgcolor1 and $bgcolor2 ) : ?>
     <style>
@@ -54,14 +56,17 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
                 </div>
             </div>
             <div class="hero-home__image">
-            <?php if ($video) : ?>                
-                <video style="object-fit:cover;width:100%;height:100%;" loop autoplay>
-                    <source src="<?php echo $video ?>" type="video/mp4">
-                    Your browser does not support the video tag. <!-- Text to be shown incase browser doesnt support html5 -->
-                    </video>
-            <?php else : ?>
-                <?php echo get_the_post_thumbnail() ?>
-            <?php endif; ?>
+                <?php if (isset($imageorvideo)) : ?>
+                    <?php if ($imageorvideo === 'video') : ?>
+                        <video style="object-fit:cover;width:100%;height:100%;" loop autoplay>
+                            <source src="<?php echo $herovideo ?>" type="video/mp4">Your browser does not support the video tag. <!-- Text to be shown incase browser doesnt support html5 -->
+                        </video>
+                    <?php else : ?>
+                        <img src="<?php echo $heroimage['url'] ?>" alt="<?php echo $heroimage['alt'] ?>">
+                    <?php endif; ?>
+                <?php else : ?>
+                    <?php echo get_the_post_thumbnail() ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
                 <?php yoast_breadcrumb(); ?>
             </div>
             <h1 class="hero-pillar__title hero-pillar__title--large">
-                <?php echo $title ?>
+                <?php echo $pillartitle ?>
             </h1>
             <div class="hero-pillar__meta">
                 <?php include( locate_template( 'includes/component-meta-line.php', false, false ) );  ?>

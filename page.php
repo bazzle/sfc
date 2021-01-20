@@ -20,8 +20,6 @@ $pagetitle = get_the_title();
 
 
         <div class="panel panel--no-inner panel--nopad-top article__main">
-            
-            <div class="grid-space article__space-left"></div>
 
             <div class="article__body">
                 <p class="article__intro">
@@ -41,7 +39,6 @@ $pagetitle = get_the_title();
                     <?php echo $asidemain; ?>
                 </aside>
             <?php endif; ?>
-            <div class="grid-space article__space-right"></div>
 
         </div>
     </article>

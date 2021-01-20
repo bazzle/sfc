@@ -4,9 +4,6 @@
         @include title-module;
     }
     &__content{
-        p{
-            @include text-body;
-        }
         margin-bottom: $gap/2;
     }
 }

@@ -7,11 +7,12 @@ $asidemain = get_field("aside_main", $term);
 if (empty($title)){
     $title = $term->name;
 }
+$paneltitle = $title;
 ?>
 
 <?php get_header(); ?>
 
-<div class="panel">
+    <div class="panel">
         <div class="panel__inner panel__inner--margins">
             <?php include( locate_template( 'includes/component-panel-title.php' ) );  ?>
             <div class="grid grid-4x grid-4x--repeat">

@@ -13,15 +13,11 @@
 
 
     <section class="panel panel--no-inner pillar__section">
-                
-        <div class="grid-item grid-space article__space-left"></div>
         
 
-        <h1 class="grid-item pillar__section__title">
+        <h2 class="grid-item pillar__section__title">
             <?php echo $title ?>
-        </h1>
-
-        <div class="grid-item grid-space article__space-right"></div>
+        </h2>
 
 
         <div class="grid-item pillar__section__body">

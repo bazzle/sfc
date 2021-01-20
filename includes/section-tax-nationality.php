@@ -1,5 +1,5 @@
 <?php
-$title = get_field( "title", $term );
+$pillartitle = get_field( "title", $term );
 $intro = get_field("intro", $term );
 $overview = get_field("pillar_overview", $term);
 $asidecontent = get_field("aside_content", $term);
@@ -22,7 +22,7 @@ if (empty($title)){
     <?php if ( have_posts() ) : ?>
     <div class="panel">
         <div class="panel__inner">
-            <?php $paneltitle = 'Korean street food articles' ?>
+            <?php $paneltitle = $pillartitle . ' ' . 'articles' ?>
             <?php include(locate_template('includes/component-panel-title.php')); ?>
             <div class="panel__inner--margins">
                     <div class="grid grid-4x grid-4x--repeat">
