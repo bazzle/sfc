@@ -1,7 +1,6 @@
 <?php
-$heading_level = get_sub_field('block_title_level');
-if (empty($heading_level)){
-    $heading_level = 3;
+if (empty($blocktitlelevel)){
+    $blocktitlelevel = 3;
 };
 ?>
 <div class="block-card">
@@ -12,9 +11,9 @@ if (empty($heading_level)){
         </a>
     </div>
     <?php endif; ?>
-    <h<?php echo $heading_level ?> class="block-card__title">
+    <h<?php echo $blocktitlelevel ?> class="block-card__title">
         <a href="<?php echo $link ?>"><?php echo $blocktitle ?></a>
-    </h<?php echo $heading_level ?>>
+    </h<?php echo $blocktitlelevel ?>>
     <div class="block-card__text">
         <?php echo $text ?>
     </div>

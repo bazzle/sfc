@@ -26,9 +26,6 @@
         @include break(medium) {
             @include align-left-center;
         }
-        &>*{
-            color:$black;
-        }
         &__title{
             text-align: center;
             @include text-blocky--tiny;

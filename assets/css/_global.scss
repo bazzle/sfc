@@ -484,7 +484,6 @@ svg path{
       transition: all 0.2s $fast-to-slow 0s;
   }
   &:hover{
-      color:$color-accent;
       &:after{
           height:100%;
       }
@@ -900,13 +899,12 @@ form{
     border:1px solid $color-dark-gray;
   }
   label{
-    @include text-tiny;
+    font-family: $font-std;
   }
   input, textarea{
     padding: .8em;
     padding-top: .6em;
     border-radius: 0;
-    font-size: $font-size-std;
   }
   input{
     @include break-under(phone) {
@@ -915,7 +913,8 @@ form{
     }
   }
   input[type='submit']{
-    @include button;
+    display: block;
+    @include button--anim;
   }
 }
 

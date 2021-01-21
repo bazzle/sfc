@@ -22,7 +22,10 @@ if (empty($title)){
     <?php if ( have_posts() ) : ?>
     <div class="panel">
         <div class="panel__inner">
-            <?php $paneltitle = $pillartitle . ' ' . 'articles' ?>
+            <?php
+            $paneltitle = $pillartitle . ' ' . 'articles';
+            $paneltitleLevel = 3;
+            ?>
             <?php include(locate_template('includes/component-panel-title.php')); ?>
             <div class="panel__inner--margins">
                     <div class="grid grid-4x grid-4x--repeat">
@@ -30,6 +33,7 @@ if (empty($title)){
                         <?php while ( have_posts() ) : the_post();
                             $id = get_the_ID();
                             $blocktitle = get_the_title();
+                            $blocktitlelevel = 4;
                             $imagepath = get_the_post_thumbnail_url();
                             $imagealt = get_the_title();
                             $text = get_field('intro');

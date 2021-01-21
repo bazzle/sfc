@@ -1,13 +1,11 @@
 <?php
-$title = get_field( "title", $term );
+$title = 'What to Eat';
 $intro = get_field("intro", $term );
 $overview = get_field("pillar_overview", $term);
 $asidecontent = get_field("aside_content", $term);
 $asidemain = get_field("aside_main", $term);
-if (empty($title)){
-    $title = $term->name;
-}
 $paneltitle = $title;
+$paneltitleLevel = 1;
 ?>
 
 <?php get_header(); ?>
@@ -33,12 +31,10 @@ $paneltitle = $title;
                         $imagepath = get_field("featured_image", $cat)['url'];
                         $imagealt = get_field("featured_image", $cat)['alt'];
                         $text = wpautop(category_description($cat));
+                        $heading_level = 2;
                     ?>
 
                     <div class="grid__item grid-4x__item">
-                        <?php $block = 'block_1_feature_block';
-                            $heading_level = 2;
-                        ?>
                         <?php include( locate_template( 'includes/component-block--card.php', false, false ) ); ?>
                     </div>
 

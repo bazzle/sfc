@@ -35,9 +35,7 @@
                         </a>
 
                         <div class="footer__social-links">
-                            <h4 class="footer__social-links__title">
-                                Let's be social
-                            </h4>
+                            <div class="footer__social-links__title">Lets be social</div>
                             <div class="footer__social-links__links">
                                 <a class="footer__social-links__links__item" href="#">
                                     <svg class="facebook-icon">

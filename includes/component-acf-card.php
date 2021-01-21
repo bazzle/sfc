@@ -4,6 +4,7 @@
         <?php
         $block_type = get_sub_field('block_type');
         $blocktitle = get_sub_field('block_title');
+        $blocktitlelevel = get_sub_field('block_title_level');
         $imagepath = get_sub_field('block_image')['url'];
         $imagealt = get_sub_field('block_image')['alt'];
         $text = wpautop(get_sub_field('block_text'));
