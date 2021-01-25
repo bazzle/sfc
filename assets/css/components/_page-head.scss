@@ -74,7 +74,7 @@
             padding:0 $gap;
         }
         @include break(large) {
-            @include align-right;
+            @include align(center, right);
             text-align:right;
             padding:$gap 0;
         }

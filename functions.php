@@ -91,29 +91,9 @@ function recent_posts($atts = [], $content = null, $tag = '') {
         'showposts' => $sc_atts['number_of_posts'],
         'post_type' => $sc_atts['post_type'],
         'tag' => $sc_atts['tag']
-    ));
-    // template
-	ob_start(); ?>
-    <div class="post-list">
-    <ul class="post-list__list">
-    <?php
-    if (have_posts()) :
-        while (have_posts()) : the_post() ?>
-            <?php $intro = get_field( "intro" ); ?>
-            <li class="post-list__item">
-                <h3 class="post-list__item__title">
-                    <a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a>
-                </h3>
-            <?php if($intro) : ?>
-                <p class="post-list__item__description">
-                    <?php echo $intro ?>
-                </p>
-            <?php endif; ?>
-            </li>
-        <?php endwhile;
-    endif; ?>
-    </ul>
-    </div>
+    )); ?>
+	<?php ob_start(); ?>
+    <?php include( locate_template( 'includes/section-post-list.php', false, false ) );  ?>
     <?php wp_reset_query();
     return ob_get_clean();
 } ?>
@@ -134,22 +114,9 @@ function recent_guide_posts($atts = [], $content = null, $tag = '') {
         'showposts' => $sc_atts['number_of_posts'],
         'post_type' => 'guide_posts',
         'guide_categories' => $sc_atts['guide_category']
-    ));
-    // template
-	ob_start(); ?>
-    <ul class="sidebar-list">
-    <?php
-    if (have_posts()) :
-        while (have_posts()) : the_post() ?>
-            <li class="sidebar-list__item block-card--horiz">
-                <?php if ( has_post_thumbnail()) : ?>
-                    <a class="block-card--horiz__image" href="<?php echo get_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url()?>"/></a>
-                <?php endif; ?>
-                <a class="block-card--horiz__title" href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a>
-            </li>
-        <?php endwhile;
-    endif; ?>
-    </ul>
+    )); ?>
+    <?php ob_start(); ?>
+    <?php include( locate_template( 'includes/section-sidebar-list.php', false, false ) );  ?>
     <?php wp_reset_query();
     return ob_get_clean();
 } ?>

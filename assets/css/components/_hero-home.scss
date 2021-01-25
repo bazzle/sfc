@@ -77,12 +77,6 @@
             @include title(3.2rem);
             margin-bottom:$gap--tight;
         }
-        &__intro{
-            margin-bottom:$gap--tight;
-            @include break(medium){
-                margin-bottom: $gap--tight;
-            }
-        }
         &__icons{
             display: flex;
             justify-content: center;

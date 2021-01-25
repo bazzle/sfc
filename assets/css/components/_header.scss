@@ -20,11 +20,11 @@
     }
     &__logo-lockup{
         @include break-under(tablet) {
-            @include align-left-center;
+            @include align(center, left);
             height: $header-height-mobile;
         }
         @include break(tablet) {
-            @include align-center;
+            @include align(center, center);
         }
         &__logo{
             display: block;
@@ -100,7 +100,7 @@
                 display: block;
                 @include text-blocky--lower(1.8rem);
                 height: 100%;
-                @include align-center;
+                @include align(center, center);
                 padding:0 2em;
                 position: relative;
             }

@@ -29,9 +29,9 @@
   &__list{
     &>li.menu-item:not(.menu-item-has-children){
       display: block;
-      @include text-blocky--lower;
       margin: 0;
       a{
+        @include text-blocky(1.8rem);
         display: block;
         padding: .5em;
         margin: 0;
@@ -44,7 +44,7 @@
       padding: 1em;
       margin-bottom: 1em;
       &>a{
-        @include text-blocky;
+        @include text-blocky(1.8rem);
       }
       ul{
         margin: 1em 0;

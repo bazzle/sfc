@@ -4,18 +4,11 @@
 $path-images: "../assets/images/";
 $path-fonts: "../assets/fonts/";
 
-// layout ==============================================
 
-// margins
-$gap:6rem;
-$gap--tight:3rem;
-$gap--deep:12rem;
-$gap--responsive--tight:clamp(#{$gap/4}, 1.5vw, #{$gap/2});
-$gap--responsive:clamp(#{$gap/4}, 3vw, #{$gap});
-$gap--responsive--thick:clamp(#{$gap/2}, 6vw, #{$gap*2});
+// Main sizes ==========================================
+
 $sitewidth:1600px;
 $content-width:1000px;
-$margin-std:1.5rem;
 
 // colors ==============================================
 
@@ -62,63 +55,16 @@ $color-body-heading:$color-primary;
 $color-tagline:$black;
 $color-selection:$color-accent;
 
-// typography ==============================================
+// Some variables and mixins ==============================================
 
-// loading fonts
-
-@font-face {
-    font-family: feijoamedium;
-    src: url(../fonts/feijoa-test-medium.woff) format('woff');
-}
-@font-face {
-    font-family: feijoabold;
-    src: url(../fonts/feijoa-test-bold.woff) format('woff');
-}
-@font-face {
-    font-family: metricsemibold;
-    src: url(../fonts/metric-test-semibold.woff) format('woff');
-}
-@font-face {
-    font-family: metricmedium;
-    src: url(../fonts/metric-test-medium.woff) format('woff');
-}
-@font-face {
-    font-family: metricregular;
-    src: url(../fonts/metric-test-regular.woff) format('woff');
-}
-@font-face {
-    font-family: metricbold;
-    src: url(../fonts/metric-test-bold.woff) format('woff');
-}
-@font-face {
-    font-family: metriclight;
-    src: url(../fonts/metric-test-light.woff) format('woff');
-}
-
-$font-display:'metricbold', sans-serif;
-$font-blocky:'metricsemibold', sans-serif;
-$font-std:'metricregular', sans-serif;
-$font-light:'metriclight', sans-serif;
-$font-bold:'metricmedium', sans-serif;
-
-// font weights
-$weight-std-std:400;
-$weight-std-bold:600;
-
-// font-size;
-$font-size-base:10px;
-$font-size-mobile:1.4rem;
-$font-size-std:1.8rem;
-$font-size-tiny:1.2rem;
-
-// line heights
-$line-height-std:1.4;
-$line-height--tight:1.2;
-
-$s1:8rem;
-$s2:6rem;
-$s3:3rem;
-$s4:2rem;
+// margins
+$gap:5rem;
+$gap--tight:4rem;
+$gap--deep:12rem;
+$gap--responsive--tight:clamp(#{$gap/4}, 1.5vw, #{$gap/2});
+$gap--responsive:clamp(#{$gap/4}, 3vw, #{$gap});
+$gap--responsive--thick:clamp(#{$gap/2}, 6vw, #{$gap*2});
+$margin-std:1.5rem;
 
 
 // header ==============================================

@@ -20,7 +20,7 @@
 
     &__profile{
         position: absolute;
-        @include align-center;
+        @include align(center, center);
         top:0;
         transform: translate(0, -50%);
         &__image{
@@ -35,7 +35,7 @@
         max-width: none;
         text-align: left;
         &__description{
-            font-family:$font-std;
+            @include font-std;
             line-height: $line-height--tight;
             margin-top: $gap/2;
             margin-bottom: $gap--tight/2;

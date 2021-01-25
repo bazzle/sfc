@@ -46,7 +46,7 @@
                 content: "\f0a4";
                 font-family: FontAwesome;
                 font-size: 15px;
-                @include align-center;
+                @include align(center, center);
                 transition: all 0.2s linear 0s;
                 border-radius:$border-radius;
             }

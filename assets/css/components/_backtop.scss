@@ -12,7 +12,7 @@
     bottom:-1px;
     left: 0;
     color: $color-text;
-    @include align-right;
+    @include align(center, right);
     &__inner{
         height:100%;
         position:relative;
@@ -42,7 +42,7 @@
             animation-fill-mode:forwards;
         }
         padding:1em 1.7em;
-        @include align-center;
+        @include align(center, center);
         border-radius: $border-radius;
         span {
             @include link-styled;

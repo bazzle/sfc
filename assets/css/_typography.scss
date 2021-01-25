@@ -1,0 +1,289 @@
+@font-face {
+    font-family: metricsemibold;
+    src: url(../fonts/metric-test-semibold.woff) format('woff');
+}
+@font-face {
+    font-family: metricmedium;
+    src: url(../fonts/metric-test-medium.woff) format('woff');
+}
+@font-face {
+    font-family: metricregular;
+    src: url(../fonts/metric-test-regular.woff) format('woff');
+}
+@font-face {
+    font-family: metricbold;
+    src: url(../fonts/metric-test-bold.woff) format('woff');
+}
+@font-face {
+    font-family: metriclight;
+    src: url(../fonts/metric-test-light.woff) format('woff');
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700;900&display=swap");
+
+@mixin font-display {
+    font-family: "metricbold", sans-serif;
+}
+@mixin font-bold {
+    font-family: "metricsemibold", sans-serif;
+}
+@mixin font-std {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+}
+@mixin font-light {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 100;
+}
+
+// font-size;
+$font-size-base: 10px;
+$font-size-mobile: 1.4rem;
+$font-size-std: 1.8rem;
+$font-size-tiny: 1.2rem;
+
+// line heights
+$line-height-std: 1.4;
+$line-height--tight: 1.2;
+
+@mixin text-background {
+    background: linear-gradient(
+        to bottom,
+        rgba($color-accent, 0) 49%,
+        rgba($color-accent, 0.2) 50%,
+        rgba($color-accent, 0.2) 100%
+    );
+}
+
+// normal text
+@mixin text-std {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    @include font-std;
+    @include break(medium) {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+}
+
+@mixin text-tiny {
+    @include font-std;
+    line-height: 1.4;
+}
+
+// Blocky text
+@mixin text-blocky($font-size: 1.4rem) {
+    @include font-bold;
+    line-height: $line-height-std;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: $font-size;
+    p {
+        line-height: $line-height-std;
+        font-size: $font-size;
+    }
+}
+
+// Blocky text lowercase
+@mixin text-blocky--lower($font-size: 1.4rem) {
+    @include font-bold;
+    line-height: $line-height--tight;
+    letter-spacing: 0.05em;
+    font-size: $font-size;
+    p {
+        line-height: $line-height-std;
+    }
+}
+
+@mixin text-blocky--tiny($font-size: 1.2rem) {
+    @include font-bold;
+    line-height: $line-height-std;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: $font-size;
+    p {
+        line-height: $line-height-std;
+        font-size: $font-size;
+    }
+}
+
+// leadin/intro text
+@mixin text-leadin($font-size: 2.2rem) {
+    @include font-bold;
+    font-size: 2rem;
+    line-height: 1.4;
+    @include break(tablet) {
+        font-size: $font-size;
+    }
+}
+
+// title standard
+@mixin title($size: 3.2rem, $color: $color-heading) {
+    line-height: $line-height--tight;
+    color: $color;
+    @include font-bold;
+    font-size: clamp(2.6rem, 3.2vw, $size);
+    @include break(tablet) {
+        font-size: $size;
+    }
+    @include break-under(phone) {
+        word-break: break-word;
+    }
+}
+
+// title display
+@mixin title-display($size: 2vw) {
+    line-height: 1.1;
+    @include font-display;
+    font-size: clamp(3rem, $size, 4rem);
+}
+
+// title display large
+@mixin title-display--large($size: 3.5vw) {
+    line-height: 1.1;
+    @include font-display;
+    font-size: clamp(3.5rem, $size, 8rem);
+}
+
+// title block –– titles for cards mainly
+@mixin title-block($font-size: 2.4rem) {
+    line-height: 1.2;
+    font-size: clamp(2rem, 3vw, $font-size);
+    @include font-bold;
+}
+
+// title module
+@mixin title-module {
+    @include text-blocky;
+    @include text-background;
+    text-align: left;
+    display: inline-block;
+}
+
+// HTML/BODY
+html {
+    font-size: $font-size-base;
+}
+body {
+    @include font-std;
+    font-size: $font-size-mobile;
+    @include break(tablet) {
+        font-size: $font-size-std;
+    }
+    line-height: $line-height--tight;
+}
+
+.text-blocky {
+    @include text-blocky;
+    color: blue;
+}
+.text-blocky--lower {
+    @include text-blocky--lower;
+}
+.text-blocky--tiny {
+    @include text-blocky--tiny;
+}
+.title-module {
+    @include title-module;
+}
+
+// TEXT GAPS =================================================================================================
+
+@mixin text-gap {
+    margin-bottom: $gap/2;
+    @include break(tablet) {
+        margin-bottom: $gap;
+    }
+}
+
+@mixin text-gap--tight {
+    margin-bottom: $gap--tight/2;
+    @include break(tablet) {
+        margin-bottom: $gap--tight;
+    }
+}
+
+// TEXT BODY =================================================================================================
+
+// text body
+%text-body-format {
+    line-height: $line-height-std;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    img,
+    p,
+    ul,
+    ol {
+        @include text-gap--tight;
+    }
+    img {
+        width: 100%;
+        max-width: $content-width;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: $color-body-heading;
+        @include title;
+        position: relative;
+        bottom: 0.02em;
+    }
+    h1,
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    h4,
+    h5 {
+        font-size: 2rem;
+        color: inherit;
+    }
+    p,
+    li {
+        @include font-std;
+        font-size: 1.6rem;
+        line-height:1.6;
+    }
+    p,
+    ol,
+    ul,
+    .cite,
+    pre {
+        max-width: $content-width;
+    }
+    ul {
+        box-sizing: border-box;
+    }
+    li {
+        width: calc(100% - 1em);
+        list-style: none;
+        position: relative;
+        padding-left: 1em;
+        &:before {
+            content: "■";
+            color: #21c4d3;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 12px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    pre {
+        background-color: $white;
+        padding: 1em;
+    }
+}

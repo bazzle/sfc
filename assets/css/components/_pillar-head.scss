@@ -60,7 +60,7 @@
             @include text-gap--tight;
         }
         @include break(medium) {
-            @include align-right;
+            @include align(center, right);
             text-align:right;
             padding:$gap--responsive 0;
         }

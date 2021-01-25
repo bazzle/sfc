@@ -28,7 +28,7 @@
            position:relative;
        }
        .header__logo-lockup{
-           @include align-left-center;
+           @include align(center, left);
            height: $header-height-mobile;
            .header__logo{
                display: block;
@@ -97,7 +97,7 @@
                    display: block;
                    @include text-blocky--lower;
                    height: 100%;
-                   @include align-center;
+                   @include align(center, center);
                    padding:0 2em;
                    position: relative;
                }

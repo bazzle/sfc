@@ -1,17 +1,3 @@
-// Breakpoints
-$breakpoints: (
-  phone-small: 380px,
-  phone: 560px,
-  tablet: 700px,
-  medium: 960px,
-  large: 1280px,
-  xlarge: 1440px,
-  sitewidth: $sitewidth
-);
-$breakpoints--h: (
-    letterbox: 900px,
-);
-
 // make space for WP admin bar
 
 @mixin admin-bar($spacing:padding){
@@ -31,31 +17,6 @@ $breakpoints--h: (
       padding-top:32px;
     }
   }
-}
-
-// breakpoint mixins
-@mixin break($breakpoint: medium) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    }
-}
-@mixin break-under($breakpoint: medium) {
-  @if map-has-key($breakpoints, $breakpoint) {
-      @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
-          @content;
-      }
-  }
-}
-
-// height 
-@mixin break--h($breakpoint) {
-    @if map-has-key($breakpoints--h, $breakpoint) {
-        @media screen and (max-height: map-get($breakpoints--h, $breakpoint)) and (orientation: landscape) {
-            @content;
-        }
-    }
 }
 
 // Standard greyscale: number = brightness (HSB)
@@ -86,22 +47,6 @@ $vimeo: #1AB7EA;
 $whatsapp: #25D366;
 $youtube: #CD201F;
 
-
-// Reverse
-
-@mixin color-reverse{
-  color:$white;
-  background-color:$color-primary;
-  h1, h2, h3, h4, h5, p, ul, li, a, span{
-    color:$white;
-    background-color:$color-primary;
-  }
-}
-
-
-
-
-
 // Aspect ratios
 $aspect_1-1: 100%;
 $aspect_16-9: 56.25%;
@@ -109,80 +54,11 @@ $aspect_4-3: 75%;
 $aspect_3-2: 66.66%;
 $aspect_8-5: 62.5%;
 
-
-
-// alignment
-@mixin align-left{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-}
-@mixin align-left-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-}
-@mixin align-left-center{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-}
-@mixin align-left-bottom{
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-start;
-}
-@mixin align-center{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-@mixin align-center--baseline{
-    display:flex;
-    align-items:baseline;
-    justify-content:center;
-}
-@mixin align-center-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-}
-@mixin align-center-bottom{
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-}
-
-@mixin align-right{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-}
-@mixin align-right-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-}
-@mixin align-right-bottom{
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-end;
-}
-@mixin align-vertical-center{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-}
-
-
 @mixin position-center{
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
 }
-
-
 
 @mixin align($yaxis:center, $xaxis:center ) {
   display:flex;
@@ -224,6 +100,13 @@ $aspect_8-5: 62.5%;
   }
 }
 
+// underline
+
+@mixin text-underline($color){
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: $color;
+}
 
 // Responsive header height
 
@@ -233,7 +116,6 @@ $aspect_8-5: 62.5%;
       height:$header-height;
   }
 }
-
 
 // Make image square
 
@@ -254,10 +136,6 @@ $aspect_8-5: 62.5%;
   }
 }
 
-
-
-
-
 // Make image rectangle
 
 @mixin image--rect{
@@ -275,4 +153,28 @@ $aspect_8-5: 62.5%;
       height: 100%;
       object-fit:cover;
   }
+}
+
+// Background image
+
+@mixin bgimage($filename, $ext){
+  background-image:url('#{$path-images}/#{$filename}.#{$ext}');
+  background-repeat:no-repeat;
+}
+
+// Double border
+
+@mixin double-border($top, $bottom){
+  border-bottom:1px solid $top;
+  position:relative;
+    &:after{
+      content:'';
+      width:100%;
+      height:1px;
+      background-color:$bottom;
+      display:block;
+      position:absolute;
+      bottom:0;
+      left:0;
+    }
 }

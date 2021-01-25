@@ -80,12 +80,12 @@
         height:100%;
         @include align(center, left);
     }
+    &__breadcrumb{
+        margin-bottom: $gap--tight/2;
+    }
     &__title{
         @include title-display;
-        padding-bottom: $gap/4;
-        @include break-under(tablet) {
-            @include text-gap--tight;
-        }
+        margin-bottom: $gap--tight/2;
         &--large{
             @include title-display--large;
         }

@@ -20,7 +20,7 @@ if( $bgcolor1 and $bgcolor2 ) : ?>
     <div class="hero-pillar__title-lockup contentstart">
         <div class="hero-pillar__title-lockup__inner">
             <div class="hero-pillar__breadcrumb breadcrumb">
-                <?php yoast_breadcrumb(); ?>
+                <?php include( locate_template( 'includes/component-breadcrumb.php' ) );  ?>
             </div>
             <h1 class="hero-pillar__title hero-pillar__title--large">
                 <?php echo $pillartitle ?>

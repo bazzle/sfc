@@ -52,9 +52,6 @@
         }
     }
     &__about{
-        text-align:center;
-        font-weight:$weight-std-bold;
-        @extend %text-body;
         @include break(large) {
             max-width: none;
             text-align: left;

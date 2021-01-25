@@ -1,7 +1,7 @@
 .ad{
     &--vertical{
         width:100%;
-        @include align-center;
+        @include align(center, center);
         display: none;
         @include break(medium) {
             display: block;
@@ -9,7 +9,7 @@
     }
     &--vertical-square{
         width:100%;
-        @include align-center;
+        @include align(center, center);
         @include break(medium) {
             display: block;
         }
