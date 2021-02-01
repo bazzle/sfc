@@ -56,6 +56,9 @@
                 padding-left:$gap--responsive;
                 padding-right:$gap--responsive;
             }
+            span{
+                @include text-background;
+            }
         }
         &__body{
             padding-bottom:$gap;

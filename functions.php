@@ -1,20 +1,18 @@
 <?php
-    add_action('admin_head', 'acf_cat_edit');
+add_action('admin_head', 'acf_cat_edit');
 
-    function acf_cat_edit() {
-      echo '<style>
-        #edittag{
-            max-width:1400px;
-        }
-      </style>';
+function acf_cat_edit() {
+    echo '<style>
+    #edittag{
+        max-width:1400px;
     }
-?>
+    </style>';
+}
 
 
-<?php
 function consoleLog($message) {
     echo '<script type="text/javascript">' .
-      'console.log(' . '"' . $message . '"' . ');</script>';
+    'console.log(' . '"' . $message . '"' . ');</script>';
 }
 
 function add_theme_scripts() {
@@ -23,7 +21,6 @@ function add_theme_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
-
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
 add_theme_support('widgets');
@@ -37,8 +34,8 @@ function my_sidebars(){
         )
     );
 };
-add_action('widgets_init','my_sidebars');
 
+add_action('widgets_init','my_sidebars');
 register_nav_menus(
     array(
         'mobile-menu' => 'Mobile menu location',
@@ -47,13 +44,11 @@ register_nav_menus(
     )
 );
 
-
 function the_field_without_wpautop( $field_name ) {
 	remove_filter('acf_the_content', 'wpautop');
 	the_field( $field_name );
 	add_filter('acf_the_content', 'wpautop');
 }
-
 
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
@@ -69,16 +64,6 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
-?>
-
-
-
-
-
-
-
-
-<?php
 function recent_posts($atts = [], $content = null, $tag = '') {
     $sc_atts = shortcode_atts([
         'number_of_posts' => '',
@@ -96,13 +81,8 @@ function recent_posts($atts = [], $content = null, $tag = '') {
     <?php include( locate_template( 'includes/section-post-list.php', false, false ) );  ?>
     <?php wp_reset_query();
     return ob_get_clean();
-} ?>
+}
 
-
-
-
-
-<?php
 function recent_guide_posts($atts = [], $content = null, $tag = '') {
     $sc_atts = shortcode_atts([
         'number_of_posts' => '',
@@ -119,11 +99,10 @@ function recent_guide_posts($atts = [], $content = null, $tag = '') {
     <?php include( locate_template( 'includes/section-sidebar-list.php', false, false ) );  ?>
     <?php wp_reset_query();
     return ob_get_clean();
-} ?>
+}
 
 
-
-<?php function ad_vertical() {
+function ad_vertical() {
     ob_start(); ?>
 
     <div class="ad--vertical">
@@ -131,18 +110,18 @@ function recent_guide_posts($atts = [], $content = null, $tag = '') {
     </div>
 
     <?php return ob_get_clean();
-} ?>
+}
 
-<?php function ad_square() {
+function ad_square() {
     ob_start(); ?>
     <div class="ad--vertical ad--vertical-square">
     <img class="ad__image" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ads/ad-square.png" alt="Ad Horizontal">
     </div>
 
     <?php return ob_get_clean();
-} ?>
+}
 
-<?php function ad_horizontal() {
+function ad_horizontal() {
     ob_start(); ?>
 
     <div class="ad--horizontal">
@@ -150,10 +129,10 @@ function recent_guide_posts($atts = [], $content = null, $tag = '') {
     </div>
 
     <?php return ob_get_clean();
-} ?>
+}
 
 
-<?php
+
 function shortcodes_init(){
     add_shortcode('recent_guide_posts', 'recent_guide_posts');
     add_shortcode('recent_posts', 'recent_posts');
@@ -164,11 +143,8 @@ function shortcodes_init(){
 }
 
 add_action('init', 'shortcodes_init');
-?>
 
 
-
-<?php
     add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
     add_shortcode('caption', 'fixed_img_caption_shortcode');
     function fixed_img_caption_shortcode($attr, $content = null) {

@@ -1,8 +1,7 @@
 // Project specific mixins and variables
 
 // paths
-$path-images: "../assets/images/";
-$path-fonts: "../assets/fonts/";
+$path-images: "../../assets/images";
 
 
 // Main sizes ==========================================
@@ -15,7 +14,7 @@ $content-width:1000px;
 $black:#000000;
 $white: #ffffff;
 $off-white: #f9f9f9;
-$off-black: #262626;
+$off-black: #1f1f1f;
 $color-dark-gray:#4B4B4B;
 $darken-overlay:rgba(black, .05);
 $white-darken:darken($white, 5);
@@ -27,7 +26,7 @@ $color-secondary:#21c4d3;
 $color-secondary-feint:lighten($color-secondary, 30);
 $color-accent:#21c4d3;
 
-$color-bg-beige:#FFF6E4;
+$color-bg-beige:#fffbf4;
 $color-bg-grey:#EFEFEF;
 
 $color-feint:#f2f2f2;
@@ -46,10 +45,6 @@ $color-text:$black;
 
 // button colour
 $color-button:$color-primary;
-
-// Headings
-$color-heading:$color-primary;
-$color-body-heading:$color-primary;
 
 // misc
 $color-tagline:$black;

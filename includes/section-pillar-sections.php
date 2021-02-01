@@ -16,7 +16,7 @@
         
 
         <h2 class="grid-item pillar__section__title">
-            <?php echo $title ?>
+            <span><?php echo $title ?></span>
         </h2>
 
 

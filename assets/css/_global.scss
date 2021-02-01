@@ -17,10 +17,8 @@ input, button, textarea{
 
 body {
   background-color:$color-bg;
-  color:$black;
+  color:$off-black;
 }
-
-
 
 // ACCESSIBILITY ===============================================
 
@@ -543,13 +541,15 @@ form{
   input, button, textarea{
     border:1px solid $color-dark-gray;
   }
-  label{
-    @include font-std;
-  }
   input, textarea{
     padding: .8em;
     padding-top: .6em;
     border-radius: 0;
+    font-size:$font-size-mobile;
+  }
+  label{
+    font-size:$font-size-std;
+    @include font-std;
   }
   input{
     @include break-under(phone) {
@@ -558,13 +558,11 @@ form{
     }
   }
   input[type='submit']{
-    display: block;
-    @include button--anim;
+        padding: 0.8em;
+        padding-top: 0.6em;
+        border-radius: 0;
+        background-color: $color-accent;
+        color: black;
+        cursor: pointer;
   }
-}
-
-// WORDPRESS SPECIFIC OVERRIDES =====================================================================================
-
-.wp-caption{
-  width:auto!important;
 }

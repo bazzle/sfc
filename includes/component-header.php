@@ -4,8 +4,8 @@
             <div class="header__logo-lockup">
                 <a href="<?php echo get_option('home'); ?>" class="header__logo-lockup__logo">
                     <svg class="header__logo-lockup__logo__svg">
-                        <title>Street Food City Logo</title>
-                        <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo" />
+                    <title>Street Food City Logo</title>
+                    <use xlink:href="<?php echo get_template_directory_uri() ?>/build/svg/icons.svg#logo" />
                     </svg>
                 </a>
             </div>

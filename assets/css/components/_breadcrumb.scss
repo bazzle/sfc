@@ -4,6 +4,9 @@
     width: 100%;
     overflow: hidden;
     &__breadcrumb{
+        strong{
+            font-weight: inherit;
+        }
         a{
             display: inline-block;
             margin-right: 2em;

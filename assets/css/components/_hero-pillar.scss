@@ -72,7 +72,7 @@
         }
     }
     &__title-lockup{
-        padding-top:$gap--responsive;
+        padding-top:$gap/2;
         @include break(medium) {
             padding:$gap--responsive;
         }
@@ -81,11 +81,13 @@
         @include align(center, left);
     }
     &__breadcrumb{
-        margin-bottom: $gap--tight/2;
+        margin-bottom: $gap/4;
     }
     &__title{
         @include title-display;
-        margin-bottom: $gap--tight/2;
+        margin-bottom: $gap/4;
+        position: relative;
+        top: -.1em;
         &--large{
             @include title-display--large;
         }

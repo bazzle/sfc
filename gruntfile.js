@@ -78,6 +78,6 @@ module.exports = function(grunt) {
     "browserSync", "watch"
   ]);
   grunt.registerTask("build", [
-    "dart-sass"
+    "dart-sass", "browserify"
   ]);
 };
